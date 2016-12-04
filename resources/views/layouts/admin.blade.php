@@ -168,11 +168,6 @@
                         <span>Заказы</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <span>Меню</span>
-                    </a>
-                </li>
                 <li class="treeview">
                     <a href="#">
                         <span>Каталог</span>
@@ -189,8 +184,8 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#">Список категорий</a></li>
-                        <li><a href="#">Добавить катагорию</a></li>
+                        <li><a href="/admin/category">Список категорий</a></li>
+                        <li><a href="/admin/category/add">Добавить катагорию</a></li>
                     </ul>
                 </li>
             </ul>

@@ -11,16 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/admin', function () {
-    return view('admin');
-});
-
-
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'SiteController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/orders', 'OrderController@index');
+
+Route::get('/admin/category', 'CategoryController@index');
+Route::get('/admin/category/add', 'CategoryController@create');
+Route::post('/admin/category/add', 'CategoryController@create');

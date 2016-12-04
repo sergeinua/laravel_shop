@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Displays index page for the admin
      *
@@ -13,6 +17,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('settings.index');
+        return view('admin.index');
+    }
+
+    public function menu()
+    {
+        return view('admin.index');
     }
 }
