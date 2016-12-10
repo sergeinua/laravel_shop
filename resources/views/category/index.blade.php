@@ -18,7 +18,6 @@
                     <th>id</th>
                     <th>название</th>
                     <th>slug</th>
-                    <th>родительская категория</th>
                     <th>состояние</th>
                     <th>описание</th>
                 </tr>
@@ -29,10 +28,10 @@
 
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->name }}</td>
+                        <td><a href="{{ action("CategoryController@update", ['id' => $item->id]) }}">{{ \App\Category::getCatPath($item->id)  }} >>> {{ $item->name }}</a></td>
                         <td>{{ $item->slug }}</td>
-                        <td>{{ \App\Category::getCatPath($item->id)  }}</td>
                         <td>{{ $item->getStatus($item->status) }}</td>
+                        <td>{{ $item->description }}</td>
                     </tr>
 
                 @endforeach

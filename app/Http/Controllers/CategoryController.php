@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class CategoryController extends Controller
 {
@@ -23,6 +25,12 @@ class CategoryController extends Controller
             ->with(['model' => $model]);
     }
 
+    /**
+     * Creates new category
+     *
+     * @param Request $request
+     * @return $this
+     */
     public function create(Request $request)
     {
         if($request->isMethod('post')) {
@@ -45,13 +53,47 @@ class CategoryController extends Controller
                 $model->save();
                 Session::flash('success', 'Категория сохранена');
 
-                return Redirect::to('admin/category');
+                return redirect(route('category_list'));
             }
-
         }
         $category_list = Category::getCategoryList();
+        $form_action = route('category_add');
 
         return view('category.form')
-            ->with(['category_list' => $category_list]);
+            ->with([
+                'category_list' => $category_list,
+                'form_action' => $form_action
+            ]);
+    }
+
+    /**
+     * Updates existing category
+     *
+     * @param Request $request
+     * @param $id
+     * @return $this|Redirect
+     */
+    public function update(Request $request, $id)
+    {
+        $model = Category::find($id);
+
+        if($request->isMethod('post')) {
+            $model->name = $request->input('name');
+            $model->description = $request->input('description');
+            $model->parent_id = $request->input('parent_id');
+            $model->status = $request->input('status');
+            $model->save();
+
+            return redirect(route('category_list'));
+        }
+        $category_list = Category::getCategoryList();
+        $form_action = route('category_edit', ['id' => $id]);
+
+        return  view('category.form')
+            ->with([
+                'model' => $model,
+                'category_list' => $category_list,
+                'form_action' => $form_action
+            ]);
     }
 }

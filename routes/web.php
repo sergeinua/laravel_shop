@@ -18,6 +18,8 @@ Auth::routes();
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/orders', 'OrderController@index');
 
-Route::get('/admin/category', 'CategoryController@index');
+Route::get('/admin/category', 'CategoryController@index')
+    ->name('category_list');
 Route::get('/admin/category/add', 'CategoryController@create');
-Route::post('/admin/category/add', 'CategoryController@create');
+Route::post('/admin/category/add', 'CategoryController@create')->name('category_add');
+Route::any('/admin/category/edit/{id}', 'CategoryController@update')->name('category_edit');

@@ -14,26 +14,26 @@
                             <div class="alert alert-danger">{{ Session::get('error') }}</div>
                         @endif
 
-                        {{ Form::open(['url' => "/admin/category/add", 'method' => 'POST', 'id' => 'category', 'class' => 'clearfix']) }}
+                        {{ Form::open(['url' => $form_action, 'method' => 'POST', 'id' => 'category', 'class' => 'clearfix']) }}
 
                         <div class="form-group input-group-lg">
-                            {{ Form::text('name', null, ['placeholder' => 'название', 'class' => 'form-control']) }}
+                            {{ Form::text('name', isset($model->name) ? $model->name : null, ['placeholder' => 'название', 'class' => 'form-control']) }}
                         </div>
 
                         <div class="form-group input-group-lg">
-                            {{ Form::text('slug', null, ['placeholder' => 'slug', 'class' => 'form-control']) }}
+                            {{ Form::text('slug', isset($model->slug) ? $model->slug : null, ['placeholder' => 'slug', 'class' => 'form-control']) }}
                         </div>
 
                         <div class="form-group input-group-lg">
-                            {{ Form::select('parent_id', $category_list, null, ['placeholder' => 'Родительская категория', 'class' => 'form-control']) }}
+                            {{ Form::select('parent_id', $category_list, isset($model->parent_id) ? $model->parent_id : null, ['placeholder' => 'Родительская категория', 'class' => 'form-control']) }}
                         </div>
 
                         <div class="form-group input-group-lg">
-                            {{ Form::select('status', ['1' => 'Активно', '0' => 'Неактивно'], null, ['placeholder' => 'Состояние', 'class' => 'form-control']) }}
+                            {{ Form::select('status', ['1' => 'Активно', '0' => 'Неактивно'], isset($model->status) ? $model->status : null, ['placeholder' => 'Состояние', 'class' => 'form-control']) }}
                         </div>
 
                         <div class="form-group input-group-lg">
-                            {{ Form::textarea('description', null, ['placeholder' => 'описание', 'class' => 'form-control']) }}
+                            {{ Form::textarea('description', isset($model->description) ? $model->status : null, ['placeholder' => 'описание', 'class' => 'form-control']) }}
                         </div>
 
                         {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}

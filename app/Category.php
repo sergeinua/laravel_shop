@@ -12,10 +12,11 @@ class Category extends Model
     {
         $result = [];
         $model = Category::all();
+
         if (! empty($model)) {
-            foreach ($model as $item) :
-                $result[$item->id] = $item->name;
-            endforeach;
+            foreach ($model as $item) {
+                $result[$item->id] = self::getCatPath($item->id) . ' >>> ' . $item->name;
+            }
         }
 
         return $result;
