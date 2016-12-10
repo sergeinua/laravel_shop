@@ -2,29 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
-class CategoryController extends Controller
+class PageController extends Controller
 {
-    /**
-     * Renders list of the categories
-     *
-     * @return $this
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $model = Category::where('status', '1')->get();
+        $model = Page::all();
 
-        return view('category.index')
+        return view('page.index')
             ->with(['model' => $model]);
     }
 
     /**
-     * Creates new category
+     * Creates new page
      *
      * @param Request $request
      * @return $this
@@ -39,33 +39,36 @@ class CategoryController extends Controller
             ]);
             if ($validator->fails()) {
                 Session::flash('error', 'Ошибка валидации');
-                return Redirect::to('admin/category/add')
+                return Redirect::to(route('page_add'))
                     ->withErrors($validator);
             } else {
-                $model = new Category();
+                $model = new Page();
                 $model->name = $request->input('name');
                 $model->slug = $request->input('slug');
-                $model->parent_id = ($request->input('parent_id') == '') ? '0' : $request->input('parent_id');
+                $model->title = $request->input('title');
                 $model->status = $request->input('status');
-                $model->description = $request->input('description');
-                $model->save();
-                Session::flash('success', 'Категория сохранена');
+                $model->content = $request->input('content');
+                $model->order = $request->input('order');
+                $status = $model->save();
+                if ($status) {
+                    Session::flash('success', 'Страница сохранена');
+                } else {
+                    Session::flash('error', 'Возникла ошибка при сохраненнии');
+                }
 
-                return redirect(route('category_list'));
+                return redirect(route('page_list'));
             }
         }
-        $category_list = Category::getCategoryList();
-        $form_action = route('category_add');
+        $form_action = route('page_add');
 
-        return view('category.form')
+        return view('page.form')
             ->with([
-                'category_list' => $category_list,
                 'form_action' => $form_action
             ]);
     }
 
     /**
-     * Updates existing category
+     * Updates existing page
      *
      * @param Request $request
      * @param $id
@@ -73,24 +76,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = Category::find($id);
+        $model = Page::find($id);
 
         if($request->isMethod('post')) {
             $model->name = $request->input('name');
-            $model->description = $request->input('description');
-            $model->parent_id = $request->input('parent_id');
+            $model->slug = $request->input('slug');
+            $model->title = $request->input('title');
+            $model->content = $request->input('content');
+            $model->order = $request->input('order');
             $model->status = $request->input('status');
             $model->save();
 
-            return redirect(route('category_list'));
+            return redirect(route('page_list'));
         }
-        $category_list = Category::getCategoryList();
-        $form_action = route('category_edit', ['id' => $id]);
+        $form_action = route('page_edit', ['id' => $id]);
 
-        return  view('category.form')
+        return  view('page.form')
             ->with([
                 'model' => $model,
-                'category_list' => $category_list,
                 'form_action' => $form_action
             ]);
     }

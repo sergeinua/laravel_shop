@@ -188,6 +188,16 @@
                         <li><a href="/admin/category/add">Добавить катагорию</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="#">
+                        <span>Старницы</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/admin/page">Список страниц</a></li>
+                        <li><a href="/admin/page/add">Добавить Страницу</a></li>
+                    </ul>
+                </li>
             </ul>
         </section>
     </aside>

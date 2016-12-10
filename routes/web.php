@@ -12,14 +12,27 @@
 */
 
 Route::get('/', 'SiteController@index');
+Route::get('/catalog/{slug}', 'SiteController@category')->name('site_category');
+Route::get('/{slug}', 'SiteController@page')->name('site_page');
 
 Auth::routes();
 
-Route::get('/admin', 'AdminController@index');
+/* orders */
+Route::get('/admin', 'OrderController@index');
 Route::get('/admin/orders', 'OrderController@index');
-
+/* category */
 Route::get('/admin/category', 'CategoryController@index')
     ->name('category_list');
 Route::get('/admin/category/add', 'CategoryController@create');
-Route::post('/admin/category/add', 'CategoryController@create')->name('category_add');
-Route::any('/admin/category/edit/{id}', 'CategoryController@update')->name('category_edit');
+Route::post('/admin/category/add', 'CategoryController@create')
+    ->name('category_add');
+Route::any('/admin/category/edit/{id}', 'CategoryController@update')
+    ->name('category_edit');
+/* page */
+Route::get('/admin/page', 'PageController@index')
+    ->name('page_list');
+Route::get('/admin/page/add', 'PageController@create');
+Route::post('/admin/page/add', 'PageController@create')
+    ->name('page_add');
+Route::any('/admin/page/edit/{id}', 'PageController@update')
+    ->name('page_edit');
