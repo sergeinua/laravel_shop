@@ -39,6 +39,7 @@
             <li><a href="/oplata">ОПЛАТА</a></li>
             <li><a href="/contacts">КОНТАКТЫ </a></li>
         </ul>
+
         <div id="search">
             <form action="/poisk-po-katalogu" method="get">
                 <input value="" name="query" style="display: inline-block;" type="text">
@@ -477,105 +478,106 @@
                     <div class="left_cat">
                         <div class="h2">Наша продукция</div>
 
+                        @include('site.menu-left')
 
-                        <ul class="level_22 " id="categMenu">
-                            <li>
-                                <a href="/katalog/klubochnaya-pryazha"
-                                   title="Клубочная пряжа"><span>Клубочная пряжа</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/raspradazha" title="РАСПРОДАЖА"><span>РАСПРОДАЖА</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/vesovaya-pryazha" title="Весовая пряжа"><span>Весовая пряжа</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/alize" title="ALIZE"><span>ALIZE</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/yarnart" title="YARNART"><span>YARNART</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/gazzal" title="GAZZAL"><span>GAZZAL</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/magic" title="MAGIC"><span>MAGIC</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/nako" title="NAKO"><span>NAKO</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/troickaya" title="ТРОИЦКАЯ"><span>ТРОИЦКАЯ</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/tabletka"
-                                   title="ТАБЛЕТКА овечья шерсть"><span>ТАБЛЕТКА овечья шерсть</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/semyonovskaya" title="СЕМЁНОВСКАЯ"><span>СЕМЁНОВСКАЯ</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/tonkaya_pryaja" title="Тонкая пряжа"><span>Тонкая пряжа</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/pexorka" title="ПЕХОРКА"><span>ПЕХОРКА</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/kamteks" title="КАМТЕКС"><span>КАМТЕКС</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/vita" title="VITA"><span>VITA</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/vita-cotton" title="VITA COTTON"><span>VITA COTTON</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/nazar-rus" title="NAZAR-RUS"><span>NAZAR-RUS</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/kombinat-kirova" title="Комбинат Кирова"><span>Комбинат Кирова</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/lama-ural" title="ЛАМА УРАЛ"><span>ЛАМА УРАЛ</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/snako-turciya" title="NAKO Турция"><span>NAKO Турция</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/kartopu" title="KARTOPU"><span>KARTOPU</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/vita-fancy" title="VITA FANCY"><span>VITA FANCY</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/novyj" title="НОВЫЙ"><span>НОВЫЙ</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/lanoso" title="LANOSO"><span>LANOSO</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/parswool" title="PARSWOOL"><span>PARSWOOL</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/tolstaya-pryazha" title="Толстая пряжа"><span>Толстая пряжа</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/polusherst" title="Пряжа полушерсть"><span>Пряжа полушерсть</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/lentochnaya-pryazha"
-                                   title="Ленточная пряжа"><span>Ленточная пряжа</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/pryazha-xlopok" title="Пряжа хлопок"><span>Пряжа хлопок</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/himalaya" title="HIMALAYA"><span>HIMALAYA</span></a>
-                            </li>
-                            <li>
-                                <a href="/katalog/rozetti" title="ROZETTI"><span>ROZETTI</span></a>
-                            </li>
-                        </ul>
+                        {{--<ul class="level_22 " id="categMenu">--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/klubochnaya-pryazha"--}}
+                                   {{--title="Клубочная пряжа"><span>Клубочная пряжа</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/raspradazha" title="РАСПРОДАЖА"><span>РАСПРОДАЖА</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/vesovaya-pryazha" title="Весовая пряжа"><span>Весовая пряжа</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/alize" title="ALIZE"><span>ALIZE</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/yarnart" title="YARNART"><span>YARNART</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/gazzal" title="GAZZAL"><span>GAZZAL</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/magic" title="MAGIC"><span>MAGIC</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/nako" title="NAKO"><span>NAKO</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/troickaya" title="ТРОИЦКАЯ"><span>ТРОИЦКАЯ</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/tabletka"--}}
+                                   {{--title="ТАБЛЕТКА овечья шерсть"><span>ТАБЛЕТКА овечья шерсть</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/semyonovskaya" title="СЕМЁНОВСКАЯ"><span>СЕМЁНОВСКАЯ</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/tonkaya_pryaja" title="Тонкая пряжа"><span>Тонкая пряжа</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/pexorka" title="ПЕХОРКА"><span>ПЕХОРКА</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/kamteks" title="КАМТЕКС"><span>КАМТЕКС</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/vita" title="VITA"><span>VITA</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/vita-cotton" title="VITA COTTON"><span>VITA COTTON</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/nazar-rus" title="NAZAR-RUS"><span>NAZAR-RUS</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/kombinat-kirova" title="Комбинат Кирова"><span>Комбинат Кирова</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/lama-ural" title="ЛАМА УРАЛ"><span>ЛАМА УРАЛ</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/snako-turciya" title="NAKO Турция"><span>NAKO Турция</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/kartopu" title="KARTOPU"><span>KARTOPU</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/vita-fancy" title="VITA FANCY"><span>VITA FANCY</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/novyj" title="НОВЫЙ"><span>НОВЫЙ</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/lanoso" title="LANOSO"><span>LANOSO</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/parswool" title="PARSWOOL"><span>PARSWOOL</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/tolstaya-pryazha" title="Толстая пряжа"><span>Толстая пряжа</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/polusherst" title="Пряжа полушерсть"><span>Пряжа полушерсть</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/lentochnaya-pryazha"--}}
+                                   {{--title="Ленточная пряжа"><span>Ленточная пряжа</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/pryazha-xlopok" title="Пряжа хлопок"><span>Пряжа хлопок</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/himalaya" title="HIMALAYA"><span>HIMALAYA</span></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/katalog/rozetti" title="ROZETTI"><span>ROZETTI</span></a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
                     </div>
 
