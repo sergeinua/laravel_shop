@@ -1,0 +1,135 @@
+#pro_simple_gallery {
+    width: 812px;
+    height: 520px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pro_simple_gallery {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pro_gallery_bg {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    padding: 6px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.pro_pag {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    position: relative;
+}
+
+.pro_img-pags {
+    position: static;
+    left: 41px;
+    z-index: 1;
+    display: block;
+}
+
+.pro_img-pags ul {
+    margin: 0;
+    line-height: 0px;
+}
+
+.pro_img-pags li {
+    margin: 0 3px 0 0px;
+    height: 70px;
+    width: 70px;
+}
+
+.pro_img-pags li a {
+    position: relative;
+    display: block;
+    padding: 5px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.pro_img-pags li a img {
+    opacity: .6;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.pro_img-pags li a span {
+    display: block;
+    background: #000;
+}
+
+.pro_img-pags li.current a,
+.pro_img-pags li a:hover {
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, .6);
+}
+
+.pro_img-pags li.current a img,
+.pro_img-pags li a:hover img {
+    opacity: 1;
+}
+
+.pro_button3, .pro_button4 {
+    padding: 5px 3px !important;
+    position: absolute !important;
+    top: 35px;
+}
+
+.pro_button3 {
+    left: 0;
+}
+
+.pro_button4 {
+    right: 0;
+}
+
+#pro_simple_gallery .pro_button1 {
+    left: 619px;
+}
+
+#pro_simple_gallery .pro_button2 {
+    left: 650px;
+}
+
+#pro_simple_gallery .pro_play,
+#pro_simple_gallery .pro_numStatus {
+    box-shadow: none;
+}
+
+.lightbox-image {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    z-index: 99;
+}
+
+.lightbox-image img {
+    position: relative;
+    z-index: 2;
+    background: #f1f1f1;
+}
+
+.pro_image_style2 img, .pro_image_style3 img {
+    border-radius: 8px;
+}
+
+.lightbox-image span {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/magnifying-glass.png) no-repeat 50% 50%;
+    z-index: 1;
+}
