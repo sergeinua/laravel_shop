@@ -195,6 +195,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="/admin/page">Список страниц</a></li>
+                        <li><a href="/admin/homepage">Домашняя Страница</a></li>
                         <li><a href="/admin/page/add">Добавить Страницу</a></li>
                     </ul>
                 </li>

@@ -20,13 +20,20 @@ class AppServiceProvider extends ServiceProvider
             /* we're gonna display all the active categories */
             $categories = Category::where('status', '1')
                 ->get();
+            /* pages for the top-menu */
             $pages = Page::where('status', '1')
                 ->orderBy('order')
                 ->get();
+            /* social links */
+            $content = Page::where('name', 'Home')
+                ->first()
+                ->content;
+            $content = json_decode($content);
 
             $view->with([
                 'categories' => $categories,
-                'pages' => $pages
+                'pages' => $pages,
+                'content' => $content
             ]);
         });
     }

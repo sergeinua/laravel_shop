@@ -33,4 +33,8 @@ class SiteController extends Controller
             ->with(['model' => $model]);
     }
 
+    public function page($slug)
+    {
+        return view('');
+    }
 }

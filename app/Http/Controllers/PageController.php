@@ -12,7 +12,7 @@ class PageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     public function index()
@@ -31,7 +31,7 @@ class PageController extends Controller
      */
     public function create(Request $request)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'slug' => 'required',
@@ -78,7 +78,7 @@ class PageController extends Controller
     {
         $model = Page::find($id);
 
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             $model->name = $request->input('name');
             $model->slug = $request->input('slug');
             $model->title = $request->input('title');
@@ -95,6 +95,53 @@ class PageController extends Controller
             ->with([
                 'model' => $model,
                 'form_action' => $form_action
+            ]);
+    }
+
+    public function homePage(Request $request)
+    {
+        $form_action = route('page_home');
+        $model = Page::where('name', 'Home')->first();
+        $content = json_decode($model->content);
+
+        if ($request->isMethod('post')) {
+            $content = [];
+            $content['socials'] = [
+                'vk' => $request->input('vk'),
+                'vk_show' => $request->input('vk_show'),
+                'fb' => $request->input('fb'),
+                'fb_show' => $request->input('fb_show'),
+                'tw' => $request->input('tw'),
+                'tw_show' => $request->input('tw_show'),
+                'pin' => $request->input('pin'),
+                'pin_show' => $request->input('pin_show'),
+                'ok' => $request->input('ok'),
+                'ok_show' => $request->input('ok_show'),
+                'yout' => $request->input('yout'),
+                'yout_show' => $request->input('yout_show'),
+                'insta' => $request->input('insta'),
+                'insta_show' => $request->input('insta_show')
+            ];
+            $content['tel'] = [
+                'tel_num_1' => $request->input('tel_num_1'),
+                'tel_num_2' => $request->input('tel_num_2'),
+                'tel_num_3' => $request->input('tel_num_3')
+            ];
+            $model->content = json_encode($content);
+            $status = $model->save();
+            if ($status) {
+                Session::flash('success', 'Страница сохранена');
+            } else {
+                Session::flash('error', 'Возникла ошибка при сохраненнии');
+            }
+
+            return redirect(route('page_list'));
+        }
+
+        return view('page.home-page')
+            ->with([
+                'form_action' => $form_action,
+                'content' => $content
             ]);
     }
 }

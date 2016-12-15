@@ -31,6 +31,9 @@ Route::any('/admin/category/edit/{id}', 'CategoryController@update')
 /* page */
 Route::get('/admin/page', 'PageController@index')
     ->name('page_list');
+Route::get('/admin/homepage', 'PageController@homepage');
+Route::post('/admin/homepage', 'PageController@homepage')
+    ->name('page_home');
 Route::get('/admin/page/add', 'PageController@create');
 Route::post('/admin/page/add', 'PageController@create')
     ->name('page_add');

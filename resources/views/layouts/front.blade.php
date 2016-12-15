@@ -107,7 +107,7 @@
 </div>
 <div class="container">
     <div class="header-middle clearfix">
-        <a id="logo"><img src="/images/logo.jpg" alt="logo" width="200"></a>
+        <a id="logo"><img src="/img/logo.jpg" alt="logo" width="200"></a>
         <div class="block_soc">
             <div class="phobes">
                 8 (800) 500-77-46 <br> 8 (926) 933-02-93 <br> 8 (903) 127-12-29 (whatsapp, viber) <br>
@@ -136,20 +136,23 @@
                         pryaja-opt-parswool
                     </div>
                 </div>
-                <a href="http://vk.com/public114050989" target="_blank"><img src="/images/1405370299_vk.png"
-                                                                             alt="social" width="25"></a>
-                <a href="https://www.facebook.com/Parswool" target="_blank"><img
-                            src="/images/1405370303_facebook-sociocon.png" alt="social" width="25"></a>
-                <a href="https://twitter.com/beka0707" target="_blank"><img
-                            src="/images/1405370307_twitter-sociocon.png" alt="social" width="25"></a>
-                <a href="https://ru.pinterest.com/parswool/" target="_blank"><img src="/images/pinterest.png"
-                                                                                  alt="social" width="25"></a>
-                <a href="http://ok.ru/group/52220943663239" target="_blank"><img src="/images/odn.png" alt="social"
-                                                                                 width="25"></a>
-                <a href="http://www.youtube.com/channel/UCo9mMKdOsYnWBDSsPfDd_Og" target="_blank"><img
-                            src="/images/youtube.png" alt="social" width="25"></a>
-                <a href="https://www.instagram.com/parswool/" target="_blank"><img src="/images/inst_on.png"
-                                                                                   alt="social" width="25"></a>
+
+                @include('site.social-links')
+
+                {{--<a href="http://vk.com/public114050989" target="_blank"><img src="/images/1405370299_vk.png"--}}
+                                                                             {{--alt="social" width="25"></a>--}}
+                {{--<a href="https://www.facebook.com/Parswool" target="_blank"><img--}}
+                            {{--src="/images/1405370303_facebook-sociocon.png" alt="social" width="25"></a>--}}
+                {{--<a href="https://twitter.com/beka0707" target="_blank"><img--}}
+                            {{--src="/images/1405370307_twitter-sociocon.png" alt="social" width="25"></a>--}}
+                {{--<a href="https://ru.pinterest.com/parswool/" target="_blank"><img src="/images/pinterest.png"--}}
+                                                                                  {{--alt="social" width="25"></a>--}}
+                {{--<a href="http://ok.ru/group/52220943663239" target="_blank"><img src="/images/odn.png" alt="social"--}}
+                                                                                 {{--width="25"></a>--}}
+                {{--<a href="http://www.youtube.com/channel/UCo9mMKdOsYnWBDSsPfDd_Og" target="_blank"><img--}}
+                            {{--src="/images/youtube.png" alt="social" width="25"></a>--}}
+                {{--<a href="https://www.instagram.com/parswool/" target="_blank"><img src="/images/inst_on.png"--}}
+                                                                                   {{--alt="social" width="25"></a>--}}
             </div>
         </div>
         <div id="top-panel">
