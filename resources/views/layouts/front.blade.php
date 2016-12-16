@@ -99,7 +99,13 @@
         <a id="logo"><img src="/img/logo.jpg" alt="logo" width="200"></a>
         <div class="block_soc">
             <div class="phobes">
-                8 (800) 500-77-46 <br> 8 (926) 933-02-93 <br> 8 (903) 127-12-29 (whatsapp, viber) <br>
+
+                @foreach ($tel_nums as $tel_num)
+
+                    <p><a hef="tel:{{ $tel_num }}">{{ $tel_num }}</a></p>
+
+                @endforeach
+
             </div>
             <div class="soc_m">
                 <div>
