@@ -65,7 +65,7 @@
                             </div>
                             <div class="form-group input-group-lg">
                                 {{ Form::label('skype', 'skype id') }}
-                                {{ Form::text('tel_num_3', isset($content->skype) ? $content->skype : null, ['placeholder' => 'skype id', 'class' => 'form-control']) }}
+                                {{ Form::text('skype', isset($content->skype) ? $content->skype : null, ['placeholder' => 'skype id', 'class' => 'form-control']) }}
                             </div>
 
                         {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}
