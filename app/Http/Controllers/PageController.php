@@ -107,26 +107,41 @@ class PageController extends Controller
         if ($request->isMethod('post')) {
             $content = [];
             $content['socials'] = [
-                'vk' => $request->input('vk'),
-                'vk_show' => $request->input('vk_show'),
-                'fb' => $request->input('fb'),
-                'fb_show' => $request->input('fb_show'),
-                'tw' => $request->input('tw'),
-                'tw_show' => $request->input('tw_show'),
-                'pin' => $request->input('pin'),
-                'pin_show' => $request->input('pin_show'),
-                'ok' => $request->input('ok'),
-                'ok_show' => $request->input('ok_show'),
-                'yout' => $request->input('yout'),
-                'yout_show' => $request->input('yout_show'),
-                'insta' => $request->input('insta'),
-                'insta_show' => $request->input('insta_show')
+                'vk' => [
+                    'link' => $request->input('vk'),
+                    'show' => $request->input('vk_show')
+                ],
+                'fb' => [
+                    'link' => $request->input('fb'),
+                    'show' => $request->input('fb_show')
+                ],
+                'tw' => [
+                    'link' => $request->input('tw'),
+                    'show' => $request->input('tw_show')
+                ],
+                'pin' => [
+                    'link' => $request->input('pin'),
+                    'show' => $request->input('pin_show')
+                ],
+                'ok' => [
+                    'link' => $request->input('ok'),
+                    'show' => $request->input('ok_show')
+                ],
+                'yout' => [
+                    'link' => $request->input('yout'),
+                    'yout_show' => $request->input('yout_show')
+                ],
+                'insta' => [
+                    'link' => $request->input('insta'),
+                    'show' => $request->input('insta_show')
+                ]
             ];
             $content['tel'] = [
                 'tel_num_1' => $request->input('tel_num_1'),
                 'tel_num_2' => $request->input('tel_num_2'),
                 'tel_num_3' => $request->input('tel_num_3')
             ];
+            $content['skype'] = $request->input('skype');
             $model->content = json_encode($content);
             $status = $model->save();
             if ($status) {

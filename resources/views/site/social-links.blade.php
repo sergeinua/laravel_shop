@@ -1,7 +1,11 @@
-@foreach($content as $item)
+@foreach ($socials as $key => $value)
 
-    <a href="http://vk.com/public114050989" target="_blank">
-        <img src="/images/1405370299_vk.png" alt="social" width="25">
-    </a>
+    <?php if (isset($value->show)) : ?>
+
+        <a href="{{ $value->link }}" target="_blank">
+            <img src="/img/social/{{ $key }}.png" alt="social" width="25">
+        </a>
+
+    <?php endif ?>
 
 @endforeach

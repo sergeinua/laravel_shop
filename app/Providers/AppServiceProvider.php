@@ -24,16 +24,21 @@ class AppServiceProvider extends ServiceProvider
             $pages = Page::where('status', '1')
                 ->orderBy('order')
                 ->get();
-            /* social links */
+            /* social links & tel nums */
             $content = Page::where('name', 'Home')
                 ->first()
                 ->content;
             $content = json_decode($content);
+            $socials = $content->socials;
+            $tel_nums = $content->tel;
+            $skype_id = $content->skype;
 
             $view->with([
                 'categories' => $categories,
                 'pages' => $pages,
-                'content' => $content
+                'socials' => $socials,
+                'tel_nums' => $tel_nums,
+                'skype_id' => $skype_id
             ]);
         });
     }

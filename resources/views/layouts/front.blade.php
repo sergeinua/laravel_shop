@@ -27,21 +27,11 @@
     <script type="text/javascript" src="/js/jquery.tinycarousel.js"></script>
     <link type="image/ico" href="/favicon.ico" rel="shortcut icon">
 </head>
-
 <body>
 <div id="header" class="container">
     <div class="main_menu clearfix">
 
         @include('site.menu-top')
-
-        {{--<ul id="top-menu">--}}
-            {{--<li><a class="act">ГЛАВНАЯ</a></li>--}}
-            {{--<li><a href="/galereya">ГАЛЕРЕЯ</a></li>--}}
-            {{--<li><a href="/opt">ОПТ</a></li>--}}
-            {{--<li><a href="/dostavka">ДОСТАВКА</a></li>--}}
-            {{--<li><a href="/oplata">ОПЛАТА</a></li>--}}
-            {{--<li><a href="/contacts">КОНТАКТЫ </a></li>--}}
-        {{--</ul>--}}
 
         <div id="search">
             <form action="/poisk-po-katalogu" method="get">
@@ -82,7 +72,6 @@
                                 </tbody>
                             </table>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -114,45 +103,13 @@
             </div>
             <div class="soc_m">
                 <div>
-                    <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
                     <div id="SkypeButton_Call_pryaja-opt-parswool_1">
-                        <script type="text/javascript">
-
-                            Skype.ui({
-                                "name": "call",
-                                "element": "SkypeButton_Call_pryaja-opt-parswool_1",
-                                "participants": ["pryaja-opt-parswool"],
-                                "imageSize": 45
-                            });
-
-                        </script>
-                        <iframe style="display:none;" id="_detectSkypeClient_1481364841639"></iframe>
-                        <p id="SkypeButton_Call_pryaja-opt-parswool_1_paraElement"
-                           style="font-size:14px; color:#444444"><a href="javascript://"
-                                                                    onclick="Skype.tryAnalyzeSkypeUri('call', '0');Skype.trySkypeUri_Generic('skype:pryaja-opt-parswool?call', '_detectSkypeClient_1481364841639', '0'); return false;"><img
-                                        src="http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png"
-                                        alt="Skype call" role="Button"
-                                        style="border:0; margin:16px; vertical-align:-20px;"></a></p>
-                        pryaja-opt-parswool
+                        <a href="skype:{{ $skype_id }}"><img style="height: 20px" src="/img/social/skype.png"></a>
                     </div>
                 </div>
 
                 @include('site.social-links')
 
-                {{--<a href="http://vk.com/public114050989" target="_blank"><img src="/images/1405370299_vk.png"--}}
-                                                                             {{--alt="social" width="25"></a>--}}
-                {{--<a href="https://www.facebook.com/Parswool" target="_blank"><img--}}
-                            {{--src="/images/1405370303_facebook-sociocon.png" alt="social" width="25"></a>--}}
-                {{--<a href="https://twitter.com/beka0707" target="_blank"><img--}}
-                            {{--src="/images/1405370307_twitter-sociocon.png" alt="social" width="25"></a>--}}
-                {{--<a href="https://ru.pinterest.com/parswool/" target="_blank"><img src="/images/pinterest.png"--}}
-                                                                                  {{--alt="social" width="25"></a>--}}
-                {{--<a href="http://ok.ru/group/52220943663239" target="_blank"><img src="/images/odn.png" alt="social"--}}
-                                                                                 {{--width="25"></a>--}}
-                {{--<a href="http://www.youtube.com/channel/UCo9mMKdOsYnWBDSsPfDd_Og" target="_blank"><img--}}
-                            {{--src="/images/youtube.png" alt="social" width="25"></a>--}}
-                {{--<a href="https://www.instagram.com/parswool/" target="_blank"><img src="/images/inst_on.png"--}}
-                                                                                   {{--alt="social" width="25"></a>--}}
             </div>
         </div>
         <div id="top-panel">
