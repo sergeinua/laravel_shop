@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group input-group-lg">
-                            {{ Form::textarea('content', isset($model->content) ? $model->content : null, ['placeholder' => 'контент', 'class' => 'form-control', 'rows' => 20]) }}
+                            {{ Form::textarea('content', isset($model->content) ? $model->content : null, ['placeholder' => 'контент', 'class' => 'form-control', 'rows' => 20, 'id' => 'content']) }}
                         </div>
 
                         <div class="form-group input-group-lg">
@@ -49,5 +49,10 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('textarea').summernote();
+        });
+    </script>
 
 @stop
