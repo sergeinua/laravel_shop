@@ -155,149 +155,20 @@
 </div>
 <div class="categ_menu">
     <div class="services-menu container">
-
-
         <ul class="level1 clearfix">
-            <li class=" ">
-                <a href="/katalog/novyj">
-                    <img src="/images/catalog_category/000/000108/832-5555555.crop-147x90.ed81694eb3.png" alt="НОВЫЙ"
-                         title="НОВЫЙ" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/parswool">
-                    <img src="/images/catalog_category/000/000110/204-logo-final-finawhite-l.crop-147x90.3d3fe991d9.jpg"
-                         alt="PARSWOOL" title="PARSWOOL" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/snako-turciya">
-                    <img src="/images/catalog_category/000/000100/554-nako.crop-147x90.985e1cae29.png" alt="NAKO Турция"
-                         title="NAKO Турция" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/alize">
-                    <img src="/images/catalog_category/000/000084/785-alize.crop-147x90.84bbee8879.jpg" alt="ALIZE"
-                         title="ALIZE" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/kartopu">
-                    <img src="/images/catalog_category/000/000105/490-kartopu.crop-147x90.9ca53e29b8.jpg" alt="KARTOPU"
-                         title="KARTOPU" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/gazzal">
-                    <img src="/images/catalog_category/000/000086/974-gazzal.crop-147x90.5d761b8238.jpg" alt="GAZZAL"
-                         title="GAZZAL" class="b-img">
-                </a>
-            </li>
-            <li class=" brandLast">
-                <a href="/katalog/yarnart">
-                    <img src="/images/catalog_category/000/000085/364-yarnart.crop-147x90.0b5884e347.jpg" alt="YARNART"
-                         title="YARNART" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/lanoso">
-                    <img src="/images/catalog_category/000/000107/880-lanoso_logo.crop-147x90.41b19c2129.jpg"
-                         alt="LANOSO" title="LANOSO" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/pexorka">
-                    <img src="/images/catalog_category/000/000093/755-pehorka.crop-147x90.116dbbc062.jpg" alt="ПЕХОРКА"
-                         title="ПЕХОРКА" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/troickaya">
-                    <img src="/images/catalog_category/000/000089/642-troickja.crop-147x90.59a449ddce.jpg"
-                         alt="ТРОИЦКАЯ" title="ТРОИЦКАЯ" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/kamteks">
-                    <img src="/images/catalog_category/000/000094/815-7551789.crop-147x90.1fe15f1dce.jpg" alt="КАМТЕКС"
-                         title="КАМТЕКС" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/nako">
-                    <img src="/images/catalog_category/000/000088/432-nako-logo.crop-147x90.63e13cd6ac.gif" alt="NAKO"
-                         title="NAKO" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/vita-fancy">
-                    <img src="/images/catalog_category/000/000106/798-vita-fancy-logo4.crop-147x90.50a40d10f2.gif"
-                         alt="VITA FANCY" title="VITA FANCY" class="b-img">
-                </a>
-            </li>
-            <li class=" brandLast">
-                <a href="/katalog/vita">
-                    <img src="/images/catalog_category/000/000095/654-vita.crop-147x90.8dedfbeb8c.jpg" alt="VITA"
-                         title="VITA" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/vita-cotton">
-                    <img src="/images/catalog_category/000/000096/259-vitac.crop-147x90.9712936106.jpg"
-                         alt="VITA COTTON" title="VITA COTTON" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/semyonovskaya">
-                    <img src="/images/catalog_category/000/000091/591-sempryaga9.crop-147x90.5ffc34aea7.jpg"
-                         alt="СЕМЁНОВСКАЯ" title="СЕМЁНОВСКАЯ" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/lama-ural">
-                    <img src="/images/catalog_category/000/000099/795-lama.crop-147x90.f9196a658c.jpg" alt="ЛАМА УРАЛ"
-                         title="ЛАМА УРАЛ" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/vesovaya-pryazha">
-                    <img src="/images/catalog_category/000/000101/119-vesovaja-prjazha.crop-147x90.820d951d85.jpg"
-                         alt="Весовая пряжа" title="Весовая пряжа" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/klubochnaya-pryazha">
-                    <img src="/images/catalog_category/000/000103/781-klybochnaja-prjazha.crop-147x90.c73161c903.jpg"
-                         alt="Клубочная пряжа" title="Клубочная пряжа" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/tabletka">
-                    <img src="/images/catalog_category/000/000090/250-606-ovechya.crop-147x90.bbfa7b5245.jpg"
-                         alt="ТАБЛЕТКА овечья шерсть" title="ТАБЛЕТКА овечья шерсть" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/kombinat-kirova">
-                    <img src="/images/catalog_category/000/000098/709-5555555.crop-147x90.082f34ab21.jpg"
-                         alt="Комбинат Кирова" title="Комбинат Кирова" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/magic">
-                    <img src="/images/catalog_category/000/000087/930-logo999.crop-147x90.2eca6c54b2.jpg" alt="MAGIC"
-                         title="MAGIC" class="b-img">
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/katalog/raspradazha">
-                    <img src="/images/catalog_category/000/000109/784-raspradazha.crop-147x90.d1654cca53.png"
-                         alt="РАСПРОДАЖА" title="РАСПРОДАЖА" class="b-img">
-                </a>
-            </li>
-        </ul>
 
+            @foreach($categories as $category)
+
+                <li class="">
+                    <a href="/catalog/{{ $category->slug }}">
+                        <img src="/img/catalog/cats/{{ $category->slug }}.jpg" alt=""
+                             title="{{ $category->name }}" class="b-img">
+                    </a>
+                </li>
+
+            @endforeach
+
+        </ul>
     </div>
     <div style="clear:both;"></div>
 </div>
@@ -305,129 +176,129 @@
     <div class="container">
         <div class="row mobile-marg">
             <div class="col-sm-8 ss_block hidden-xs">
-                <div class="slider_block">
-                    <div id="slider" class="nivoSlider">
+                {{--<div class="slider_block">--}}
+                    {{--<div id="slider" class="nivoSlider">--}}
 
-                        <a href="http://parswool.ru/katalog/parswool/maccheroni-art" class="nivo-imageLink"
-                           style="display: none;">
-                            <img src="/images/slideshow/000/000034/174-maccheroni-art.crop-870x370.13b6b2c091.jpg"
-                                 alt="" title="" style="width: 770px; visibility: hidden;">
-                        </a>
-                        <a href="http://parswool.ru/katalog/snako-turciya/ombre" class="nivo-imageLink"
-                           style="display: none;">
-                            <img src="/images/slideshow/000/000036/496-ombre_2_rusca.crop-870x370.dad27c69d9.jpg" alt=""
-                                 title="" style="width: 770px; visibility: hidden;">
-                        </a>
-                        <a href="http://parswool.ru/katalog/snako-turciya/super-inci-hit-jakar" class="nivo-imageLink"
-                           style="display: none;">
-                            <img src="/images/slideshow/000/000037/564-s_i_hit_jakar-rus.crop-870x370.0a7457e353.jpg"
-                                 alt="" title="" style="width: 770px; visibility: hidden;">
-                        </a>
-                        <a href="http://parswool.ru/katalog/snako-turciya/paris" class="nivo-imageLink"
-                           style="display: none;">
-                            <img src="/images/slideshow/000/000035/893-paris_3_rusca.crop-870x370.f174473020.jpg" alt=""
-                                 title="" style="width: 770px; visibility: hidden;">
-                        </a>
-                        <a href="http://www.parswool.ru/katalog/gazzal" class="nivo-imageLink" style="display: block;">
-                            <img src="/images/slideshow/000/000031/685-slider03.crop-870x370.b8398d0f47.jpg" alt=""
-                                 title="" style="width: 770px; visibility: hidden;">
-                        </a>
-                        <a href="http://parswool.ru/katalog/alize/superlana-tig" class="nivo-imageLink"
-                           style="display: block;">
-                            <img src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg" alt=""
-                                 title="" style="width: 770px; visibility: hidden;">
-                        </a>
-                        <a href=" http://www.parswool.ru/katalog/snako-turciya/vizon-anatoliya" class="nivo-imageLink"
-                           style="display: none;">
-                            <img src="/images/slideshow/000/000005/288-10968572_10152936913367034_2421095525958878331_n.crop-870x370.88f6303674.jpg"
-                                 alt="" title="" style="width: 770px; visibility: hidden;">
-                        </a>
-                        <img class="nivo-main-image"
-                             src="/images/slideshow/000/000031/685-slider03.crop-870x370.b8398d0f47.jpg"
-                             style="display: inline; height: 327px; width: 770px;">
-                        <div class="nivo-caption"></div>
-                        <div class="nivo-slice" name="0"
-                             style="left: 0px; width: 770px; height: 327px; opacity: 0.672321; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-0px;">
-                        </div>
-                        <div class="nivo-slice" name="1"
-                             style="left: 51px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-51px;">
-                        </div>
-                        <div class="nivo-slice" name="2"
-                             style="left: 102px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-102px;">
-                        </div>
-                        <div class="nivo-slice" name="3"
-                             style="left: 153px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-153px;">
-                        </div>
-                        <div class="nivo-slice" name="4"
-                             style="left: 204px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-204px;">
-                        </div>
-                        <div class="nivo-slice" name="5"
-                             style="left: 255px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-255px;">
-                        </div>
-                        <div class="nivo-slice" name="6"
-                             style="left: 306px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-306px;">
-                        </div>
-                        <div class="nivo-slice" name="7"
-                             style="left: 357px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-357px;">
-                        </div>
-                        <div class="nivo-slice" name="8"
-                             style="left: 408px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-408px;">
-                        </div>
-                        <div class="nivo-slice" name="9"
-                             style="left: 459px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-459px;">
-                        </div>
-                        <div class="nivo-slice" name="10"
-                             style="left: 510px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-510px;">
-                        </div>
-                        <div class="nivo-slice" name="11"
-                             style="left: 561px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-561px;">
-                        </div>
-                        <div class="nivo-slice" name="12"
-                             style="left: 612px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-612px;">
-                        </div>
-                        <div class="nivo-slice" name="13"
-                             style="left: 663px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-663px;">
-                        </div>
-                        <div class="nivo-slice" name="14"
-                             style="left: 714px; width: 56px; height: 327px; opacity: 0; overflow: hidden;"><img
-                                    src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"
-                                    style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-714px;">
-                        </div>
-                    </div>
-                    <div class="nivo-controlNav"><a class="nivo-control" rel="0">1</a><a class="nivo-control"
-                                                                                         rel="1">2</a><a
-                                class="nivo-control" rel="2">3</a><a class="nivo-control" rel="3">4</a><a
-                                class="nivo-control" rel="4">5</a><a class="nivo-control active" rel="5">6</a><a
-                                class="nivo-control" rel="6">7</a></div>
-                </div>
+                        {{--<a href="http://parswool.ru/katalog/parswool/maccheroni-art" class="nivo-imageLink"--}}
+                           {{--style="display: none;">--}}
+                            {{--<img src="/images/slideshow/000/000034/174-maccheroni-art.crop-870x370.13b6b2c091.jpg"--}}
+                                 {{--alt="" title="" style="width: 770px; visibility: hidden;">--}}
+                        {{--</a>--}}
+                        {{--<a href="http://parswool.ru/katalog/snako-turciya/ombre" class="nivo-imageLink"--}}
+                           {{--style="display: none;">--}}
+                            {{--<img src="/images/slideshow/000/000036/496-ombre_2_rusca.crop-870x370.dad27c69d9.jpg" alt=""--}}
+                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
+                        {{--</a>--}}
+                        {{--<a href="http://parswool.ru/katalog/snako-turciya/super-inci-hit-jakar" class="nivo-imageLink"--}}
+                           {{--style="display: none;">--}}
+                            {{--<img src="/images/slideshow/000/000037/564-s_i_hit_jakar-rus.crop-870x370.0a7457e353.jpg"--}}
+                                 {{--alt="" title="" style="width: 770px; visibility: hidden;">--}}
+                        {{--</a>--}}
+                        {{--<a href="http://parswool.ru/katalog/snako-turciya/paris" class="nivo-imageLink"--}}
+                           {{--style="display: none;">--}}
+                            {{--<img src="/images/slideshow/000/000035/893-paris_3_rusca.crop-870x370.f174473020.jpg" alt=""--}}
+                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
+                        {{--</a>--}}
+                        {{--<a href="http://www.parswool.ru/katalog/gazzal" class="nivo-imageLink" style="display: block;">--}}
+                            {{--<img src="/images/slideshow/000/000031/685-slider03.crop-870x370.b8398d0f47.jpg" alt=""--}}
+                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
+                        {{--</a>--}}
+                        {{--<a href="http://parswool.ru/katalog/alize/superlana-tig" class="nivo-imageLink"--}}
+                           {{--style="display: block;">--}}
+                            {{--<img src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg" alt=""--}}
+                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
+                        {{--</a>--}}
+                        {{--<a href=" http://www.parswool.ru/katalog/snako-turciya/vizon-anatoliya" class="nivo-imageLink"--}}
+                           {{--style="display: none;">--}}
+                            {{--<img src="/images/slideshow/000/000005/288-10968572_10152936913367034_2421095525958878331_n.crop-870x370.88f6303674.jpg"--}}
+                                 {{--alt="" title="" style="width: 770px; visibility: hidden;">--}}
+                        {{--</a>--}}
+                        {{--<img class="nivo-main-image"--}}
+                             {{--src="/images/slideshow/000/000031/685-slider03.crop-870x370.b8398d0f47.jpg"--}}
+                             {{--style="display: inline; height: 327px; width: 770px;">--}}
+                        {{--<div class="nivo-caption"></div>--}}
+                        {{--<div class="nivo-slice" name="0"--}}
+                             {{--style="left: 0px; width: 770px; height: 327px; opacity: 0.672321; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-0px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="1"--}}
+                             {{--style="left: 51px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-51px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="2"--}}
+                             {{--style="left: 102px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-102px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="3"--}}
+                             {{--style="left: 153px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-153px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="4"--}}
+                             {{--style="left: 204px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-204px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="5"--}}
+                             {{--style="left: 255px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-255px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="6"--}}
+                             {{--style="left: 306px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-306px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="7"--}}
+                             {{--style="left: 357px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-357px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="8"--}}
+                             {{--style="left: 408px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-408px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="9"--}}
+                             {{--style="left: 459px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-459px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="10"--}}
+                             {{--style="left: 510px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-510px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="11"--}}
+                             {{--style="left: 561px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-561px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="12"--}}
+                             {{--style="left: 612px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-612px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="13"--}}
+                             {{--style="left: 663px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-663px;">--}}
+                        {{--</div>--}}
+                        {{--<div class="nivo-slice" name="14"--}}
+                             {{--style="left: 714px; width: 56px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
+                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
+                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-714px;">--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="nivo-controlNav"><a class="nivo-control" rel="0">1</a><a class="nivo-control"--}}
+                                                                                         {{--rel="1">2</a><a--}}
+                                {{--class="nivo-control" rel="2">3</a><a class="nivo-control" rel="3">4</a><a--}}
+                                {{--class="nivo-control" rel="4">5</a><a class="nivo-control active" rel="5">6</a><a--}}
+                                {{--class="nivo-control" rel="6">7</a></div>--}}
+                {{--</div>--}}
             </div>
             <div class="col-sm-4 b_block">
                 <div class="banner-1">

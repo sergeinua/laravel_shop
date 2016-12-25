@@ -4,7 +4,7 @@
 
     <div class="container spark-screen">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">Добавить категорию</div>
 
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group input-group-lg">
-                            {{ Form::textarea('description', isset($model->description) ? $model->status : null, ['placeholder' => 'описание', 'class' => 'form-control']) }}
+                            {{ Form::textarea('description', isset($model->description) ? $model->description : null, ['placeholder' => 'описание', 'class' => 'form-control']) }}
                         </div>
 
                         {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}
@@ -45,5 +45,12 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('textarea').summernote({
+                height: 300
+            });
+        })
+    </script>
 
 @stop

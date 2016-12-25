@@ -31,7 +31,7 @@ class CategoryController extends Controller
      */
     public function create(Request $request)
     {
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'slug' => 'required',
@@ -75,10 +75,11 @@ class CategoryController extends Controller
     {
         $model = Category::find($id);
 
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             $model->name = $request->input('name');
+            $model->slug = $request->input('slug');
             $model->description = $request->input('description');
-            $model->parent_id = $request->input('parent_id');
+            $model->parent_id = ($request->input('parent_id') == '') ? '0' : $request->input('parent_id');
             $model->status = $request->input('status');
             $model->save();
 
