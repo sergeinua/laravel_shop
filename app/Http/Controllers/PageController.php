@@ -17,7 +17,8 @@ class PageController extends Controller
 
     public function index()
     {
-        $model = Page::all();
+        $model = Page::all()
+            ->where('name', '<>', 'Home');
 
         return view('page.index')
             ->with(['model' => $model]);
