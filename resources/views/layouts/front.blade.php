@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/prettyPhoto.css" type="text/css">
     <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.css" type="text/css">
     <script type="text/javascript" src="/js/jquery.slicknav.min.js"></script>
     <script type="text/javascript" src="/js/prettyphoto.js"></script>
     <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
@@ -25,6 +26,8 @@
     <script type="text/javascript" src="/js/compare.js"></script>
     <script type="text/javascript" src="/js/ultimate.js"></script>
     <script type="text/javascript" src="/js/jquery.tinycarousel.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
+
     <link type="image/ico" href="/favicon.ico" rel="shortcut icon">
 </head>
 <body>
@@ -176,136 +179,22 @@
     <div class="container">
         <div class="row mobile-marg">
             <div class="col-sm-8 ss_block hidden-xs">
-                {{--<div class="slider_block">--}}
-                    {{--<div id="slider" class="nivoSlider">--}}
-
-                        {{--<a href="http://parswool.ru/katalog/parswool/maccheroni-art" class="nivo-imageLink"--}}
-                           {{--style="display: none;">--}}
-                            {{--<img src="/images/slideshow/000/000034/174-maccheroni-art.crop-870x370.13b6b2c091.jpg"--}}
-                                 {{--alt="" title="" style="width: 770px; visibility: hidden;">--}}
-                        {{--</a>--}}
-                        {{--<a href="http://parswool.ru/katalog/snako-turciya/ombre" class="nivo-imageLink"--}}
-                           {{--style="display: none;">--}}
-                            {{--<img src="/images/slideshow/000/000036/496-ombre_2_rusca.crop-870x370.dad27c69d9.jpg" alt=""--}}
-                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
-                        {{--</a>--}}
-                        {{--<a href="http://parswool.ru/katalog/snako-turciya/super-inci-hit-jakar" class="nivo-imageLink"--}}
-                           {{--style="display: none;">--}}
-                            {{--<img src="/images/slideshow/000/000037/564-s_i_hit_jakar-rus.crop-870x370.0a7457e353.jpg"--}}
-                                 {{--alt="" title="" style="width: 770px; visibility: hidden;">--}}
-                        {{--</a>--}}
-                        {{--<a href="http://parswool.ru/katalog/snako-turciya/paris" class="nivo-imageLink"--}}
-                           {{--style="display: none;">--}}
-                            {{--<img src="/images/slideshow/000/000035/893-paris_3_rusca.crop-870x370.f174473020.jpg" alt=""--}}
-                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
-                        {{--</a>--}}
-                        {{--<a href="http://www.parswool.ru/katalog/gazzal" class="nivo-imageLink" style="display: block;">--}}
-                            {{--<img src="/images/slideshow/000/000031/685-slider03.crop-870x370.b8398d0f47.jpg" alt=""--}}
-                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
-                        {{--</a>--}}
-                        {{--<a href="http://parswool.ru/katalog/alize/superlana-tig" class="nivo-imageLink"--}}
-                           {{--style="display: block;">--}}
-                            {{--<img src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg" alt=""--}}
-                                 {{--title="" style="width: 770px; visibility: hidden;">--}}
-                        {{--</a>--}}
-                        {{--<a href=" http://www.parswool.ru/katalog/snako-turciya/vizon-anatoliya" class="nivo-imageLink"--}}
-                           {{--style="display: none;">--}}
-                            {{--<img src="/images/slideshow/000/000005/288-10968572_10152936913367034_2421095525958878331_n.crop-870x370.88f6303674.jpg"--}}
-                                 {{--alt="" title="" style="width: 770px; visibility: hidden;">--}}
-                        {{--</a>--}}
-                        {{--<img class="nivo-main-image"--}}
-                             {{--src="/images/slideshow/000/000031/685-slider03.crop-870x370.b8398d0f47.jpg"--}}
-                             {{--style="display: inline; height: 327px; width: 770px;">--}}
-                        {{--<div class="nivo-caption"></div>--}}
-                        {{--<div class="nivo-slice" name="0"--}}
-                             {{--style="left: 0px; width: 770px; height: 327px; opacity: 0.672321; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-0px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="1"--}}
-                             {{--style="left: 51px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-51px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="2"--}}
-                             {{--style="left: 102px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-102px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="3"--}}
-                             {{--style="left: 153px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-153px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="4"--}}
-                             {{--style="left: 204px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-204px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="5"--}}
-                             {{--style="left: 255px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-255px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="6"--}}
-                             {{--style="left: 306px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-306px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="7"--}}
-                             {{--style="left: 357px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-357px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="8"--}}
-                             {{--style="left: 408px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-408px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="9"--}}
-                             {{--style="left: 459px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-459px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="10"--}}
-                             {{--style="left: 510px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-510px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="11"--}}
-                             {{--style="left: 561px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-561px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="12"--}}
-                             {{--style="left: 612px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-612px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="13"--}}
-                             {{--style="left: 663px; width: 51px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-663px;">--}}
-                        {{--</div>--}}
-                        {{--<div class="nivo-slice" name="14"--}}
-                             {{--style="left: 714px; width: 56px; height: 327px; opacity: 0; overflow: hidden;"><img--}}
-                                    {{--src="/images/slideshow/000/000029/274-untitled.crop-870x370.2b76163243.jpg"--}}
-                                    {{--style="position:absolute; width:770px; height:auto; display:block !important; top:0; left:-714px;">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="nivo-controlNav"><a class="nivo-control" rel="0">1</a><a class="nivo-control"--}}
-                                                                                         {{--rel="1">2</a><a--}}
-                                {{--class="nivo-control" rel="2">3</a><a class="nivo-control" rel="3">4</a><a--}}
-                                {{--class="nivo-control" rel="4">5</a><a class="nivo-control active" rel="5">6</a><a--}}
-                                {{--class="nivo-control" rel="6">7</a></div>--}}
-                {{--</div>--}}
+                <div class="bxslider">
+                    <li>
+                        <img src="/img/slider/1.jpg">
+                    </li>
+                    <li>
+                        <img src="/img/slider/2.jpg">
+                    </li>
+                </div>
             </div>
             <div class="col-sm-4 b_block">
                 <div class="banner-1">
-
-                    <div class="banner"><a href="http://www.parswool.ru/katalog/yarnart/christmas" target="_blank"><img
-                                    src="http://parswool.ru/images/b/000/000006/237-sdc15694.jpg" alt=""
-                                    width="320"></a></div>
+                    <div class="banner">
+                        <a href="http://www.parswool.ru/katalog/yarnart/christmas" target="_blank">
+                            <img src="http://parswool.ru/images/b/000/000006/237-sdc15694.jpg" alt="" width="320">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -369,5 +258,10 @@
                 href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('.bxslider').bxSlider({auto:true});
+    });
+</script>
 </body>
 </html>
