@@ -67,6 +67,9 @@
                                 {{ Form::label('skype', 'skype id') }}
                                 {{ Form::text('skype', isset($content->skype) ? $content->skype : null, ['placeholder' => 'skype id', 'class' => 'form-control']) }}
                             </div>
+                            <div class="form-group input-group-lg">
+                                {{ Form::textarea('content', isset($content->content) ? $content->content : null, ['placeholder' => 'контент', 'class' => 'form-control', 'rows' => 20, 'id' => 'content']) }}
+                            </div>
 
                         {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}
 
@@ -77,5 +80,10 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('textarea').summernote();
+        });
+    </script>
 
 @stop

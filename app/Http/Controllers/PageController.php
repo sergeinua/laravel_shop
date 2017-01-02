@@ -143,6 +143,7 @@ class PageController extends Controller
                 'tel_num_3' => $request->input('tel_num_3')
             ];
             $content['skype'] = $request->input('skype');
+            $content['content'] = $request->input('content');
             $model->content = json_encode($content);
             $status = $model->save();
             if ($status) {
