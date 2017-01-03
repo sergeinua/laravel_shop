@@ -99,7 +99,9 @@
 </div>
 <div class="container">
     <div class="header-middle clearfix">
-        <a id="logo"><img src="/img/logo.jpg" alt="logo" width="200"></a>
+        <a id="logo" href="/">
+            <img src="/img/logo.jpg" alt="logo" width="200">
+        </a>
         <div class="block_soc">
             <div class="phobes">
 
@@ -177,16 +179,19 @@
 </div>
 <div id="main">
     <div class="container">
+        @if($show_slider)
         <div class="row mobile-marg">
             <div class="col-sm-8 ss_block hidden-xs">
-                <div class="bxslider">
-                    <li>
-                        <img src="/img/slider/1.jpg">
-                    </li>
-                    <li>
-                        <img src="/img/slider/2.jpg">
-                    </li>
-                </div>
+                {{--slider not finished here--}}
+                    <div class="bxslider">
+                        <li>
+                            <img src="/img/slider/1.jpg">
+                        </li>
+                        <li>
+                            <img src="/img/slider/2.jpg">
+                        </li>
+                    </div>
+
             </div>
             <div class="col-sm-4 b_block">
                 <div class="banner-1">
@@ -198,6 +203,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
     <div class="clr"></div>
     <div class="main_bl">
@@ -225,16 +231,15 @@
 <div id="footer">
     <div class="container">
         <div id="copy">
-            © <?= date('Y'); ?> «ParsWool».
+            © <?= date('Y'); ?> «KakadU».
         </div>
-        <a rel="nofollow" href="http://prosto-sait.ru/" id="ilike">Разработка сайта - Просто Сайт</a>
     </div>
 </div>
-<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=RsxPYni5vHMFONNNXKVOoyXo9V4Ow6R6Dr1ErgltjxgYq1XsbkuZbHoDnx/UNwf3tgnWYWH4dTquGFsiNg26Zi6znx6FjmxBK190e5nBJLrpRZg4CqsbFztsK6saoQoSDnMwZTxlbK8cN4aVdrbhe/vWCyyxxdmKxPclWZMV5gQ-&pixel_id=1000014142';</script>
+{{--<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=RsxPYni5vHMFONNNXKVOoyXo9V4Ow6R6Dr1ErgltjxgYq1XsbkuZbHoDnx/UNwf3tgnWYWH4dTquGFsiNg26Zi6znx6FjmxBK190e5nBJLrpRZg4CqsbFztsK6saoQoSDnMwZTxlbK8cN4aVdrbhe/vWCyyxxdmKxPclWZMV5gQ-&pixel_id=1000014142';</script>--}}
 <!-- VK Widget -->
-<div id="vk_community_messages"></div>
+{{--<div id="vk_community_messages"></div>--}}
 <!-- VK Widget -->
-<div id="vk_community_messages"></div>
+{{--<div id="vk_community_messages"></div>--}}
 
 <div id="fancybox-tmp"></div>
 <div id="fancybox-loading">
@@ -258,10 +263,12 @@
                 href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>
     </div>
 </div>
+@if($show_slider)
 <script>
     $(document).ready(function(){
         $('.bxslider').bxSlider({auto:true});
     });
 </script>
+@endif
 </body>
 </html>

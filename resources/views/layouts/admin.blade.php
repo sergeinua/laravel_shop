@@ -177,8 +177,8 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#">Список товаров</a></li>
-                        <li><a href="#">Добавить товар</a></li>
+                        <li><a href="/admin/product">Список товаров</a></li>
+                        <li><a href="/admin/product/add">Добавить товар</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

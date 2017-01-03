@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', 'SiteController@index');
-Route::get('/catalog/{slug}', 'SiteController@category')->name('site_category');
-Route::get('/{slug}', 'SiteController@page')->name('site_page');
+Route::get('/', 'SiteController@index')
+    ->name('home_page');
+/* product */
+Route::get('/catalog/{category}/{slug}', 'SiteController@product')
+    ->name('site_product');
+/* category */
+Route::get('/catalog/{slug}', 'SiteController@category')
+    ->name('site_category');
+/* page */
+Route::get('/{slug}', 'SiteController@page')
+    ->name('site_page');
 
 Auth::routes();
 
@@ -39,3 +47,10 @@ Route::post('/admin/page/add', 'PageController@create')
     ->name('page_add');
 Route::any('/admin/page/edit/{id}', 'PageController@update')
     ->name('page_edit');
+/* product */
+Route::get('/admin/product', 'ProductController@index')
+    ->name('product_list');
+Route::any('/admin/product/add', 'ProductController@create')
+    ->name('product_add');
+Route::any('/admin/product/edit/{id}', 'ProductController@update')
+    ->name('product_update');

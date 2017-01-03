@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
+use App\ProductCategory;
 use Illuminate\Http\Request;
+use App\Page;
 
 class SiteController extends Controller
 {
@@ -14,7 +17,14 @@ class SiteController extends Controller
      */
     public function index()
     {
-        return view('site.home');
+        $model = Page::where('slug', 'home')->first();
+        $content = json_decode($model->content);
+
+        return view('site.home')
+            ->with([
+                'content' => $content->content,
+                'title' => $content->title
+            ]);
     }
 
     /**
@@ -25,12 +35,21 @@ class SiteController extends Controller
      */
     public function category($slug)
     {
-        $model = Category::where('status', '1')
+        $category = Category::where('status', '1')
             ->where('slug', $slug)
             ->first();
+        $pc = ProductCategory::where('category_id', $category->id)
+            ->get();
+        $products = [];
+        foreach ($pc as $item) {
+            array_push($products, Product::find($item->product_id));
+        }
 
         return view('site.category')
-            ->with(['model' => $model]);
+            ->with([
+                'category' => $category,
+                'products' => $products
+            ]);
     }
 
     public function page($slug)

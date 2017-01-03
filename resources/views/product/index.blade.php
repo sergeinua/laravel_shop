@@ -15,11 +15,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>id</th>
                     <th>название</th>
-                    <th>slug</th>
-                    <th>состояние</th>
-                    <th>описание</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,11 +23,7 @@
                 @foreach($model as $item)
 
                     <tr>
-                        <td>{{ $item->id }}</td>
-                        <td><a href="{{ action("CategoryController@update", ['id' => $item->id]) }}">{{ \App\Category::getCatPath($item->id)  }} >>> {{ $item->name }}</a></td>
-                        <td>{{ $item->slug }}</td>
-                        <td>{{ $item->getStatus($item->status) }}</td>
-                        <td>{!! mb_substr($item->description, 0,100, 'utf-8') !!}</td>
+                        <td><a href="{{ action("ProductController@update", ['id' => $item->id]) }}">{{ $item->name }}</a></td>
                     </tr>
 
                 @endforeach
@@ -41,7 +33,7 @@
         </div>
     </div>
     <div class="md-6">
-        <a class="btn btn-info" href="{{ action("CategoryController@create") }}">Добавить пункт</a>
+        <a class="btn btn-info" href="{{ action("ProductController@create") }}">Добавить товар</a>
     </div>
 
 @stop

@@ -68,6 +68,9 @@
                                 {{ Form::text('skype', isset($content->skype) ? $content->skype : null, ['placeholder' => 'skype id', 'class' => 'form-control']) }}
                             </div>
                             <div class="form-group input-group-lg">
+                                {{ Form::text('title', isset($content->title) ? $content->title : null, ['placeholder' => 'тайтл', 'class' => 'form-control', 'id' => 'title']) }}
+                            </div>
+                            <div class="form-group input-group-lg">
                                 {{ Form::textarea('content', isset($content->content) ? $content->content : null, ['placeholder' => 'контент', 'class' => 'form-control', 'rows' => 20, 'id' => 'content']) }}
                             </div>
 
