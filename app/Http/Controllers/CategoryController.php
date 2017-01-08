@@ -17,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $model = Category::where('status', '1')->get();
+        $model = Category::all();
 
         return view('category.index')
             ->with(['model' => $model]);
