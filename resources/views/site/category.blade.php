@@ -17,7 +17,7 @@
                             </a>
                             <span class="price"><strong>{{ $product->price }}</strong>&nbsp;руб</span><br>
                             <br>
-                            <div class="summ_pr">{!! $product->description !!}</div>
+                            <div class="summ_pr">{{ mb_substr(strip_tags($product->description), 0,100, 'utf-8') }}</div>
                         </div>
                     </div>
 

@@ -20,6 +20,7 @@ class CreateProductTable extends Migration
             $table->string('description', 1000);
             $table->string('slug');
             $table->float('price');
+            $table->string('img', 255);
         });
     }
 

@@ -14,7 +14,7 @@
                             <div class="alert alert-danger">{{ Session::get('error') }}</div>
                         @endif
 
-                        {{ Form::open(['url' => $form_action, 'method' => 'POST', 'id' => 'category', 'class' => 'clearfix']) }}
+                        {{ Form::open(['url' => $form_action, 'method' => 'POST', 'id' => 'category', 'class' => 'clearfix', 'enctype' => 'multipart/form-data']) }}
 
                         <div class="form-group input-group-lg">
                             {{ Form::text('name', isset($model->name) ? $model->name : null, ['placeholder' => 'название', 'class' => 'form-control']) }}
@@ -28,12 +28,24 @@
                             {{ Form::textarea('description', isset($model->description) ? $model->description : null, ['placeholder' => 'описание', 'class' => 'form-control']) }}
                         </div>
 
-                        <div class="form-group input-group-lg">
-                            {{ Form::text('price', isset($model->price) ? $model->price : null, ['placeholder' => 'цена', 'class' => 'form-control']) }}
+                        <div class="row">
+                            <div class="form-group col-md-6 col-xs-12">
+                                {{ Form::text('price', isset($model->price) ? $model->price : null, ['placeholder' => 'цена', 'class' => 'form-control']) }}
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12">
+                                {{ Form::select('category_id', $category_list, isset($category_id) ? $category_id : null, ['placeholder' => 'категория', 'class' => 'form-control']) }}
+                            </div>
                         </div>
 
-                        <div class="form-group input-group-lg">
-                            {{ Form::select('category_id', $category_list, isset($category_id) ? $category_id : null, ['placeholder' => 'категория', 'class' => 'form-control']) }}
+                        <div class="row">
+                            <div class="form-group col-md-6 col-xs-12">
+                                {{ Form::file('img') }}
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12">
+                                @if($model->img)
+                                    <img style="height: 50px;" src="/img/catalog/{{$model->img}}">
+                                @endif
+                            </div>
                         </div>
 
                         {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}

@@ -49,10 +49,18 @@ class ProductController extends Controller
                 return Redirect::to('admin/product/add')
                     ->withErrors($validator);
             } else {
+                if (! empty($request->file('img'))) {
+                    $image = $request->file('img')->store('products');
+                    $request->file('img')->move(public_path('img/catalog/products'), $image);
+                }
                 $model = new Product();
                 $model->name = $request->input('name');
+                $model->slug = $request->input('slug');
                 $model->description = $request->input('description');
                 $model->price = $request->input('price');
+                if (isset($image)) {
+                    $model->img = $image;
+                }
                 $model->save();
                 /* product to category */
                 if (! empty($request->input('category_id'))) {
@@ -96,10 +104,17 @@ class ProductController extends Controller
                 return Redirect::to('admin/product/add')
                     ->withErrors($validator);
             } else {
+                if (! empty($request->file('img'))) {
+                    $image = $request->file('img')->store('products');
+                    $request->file('img')->move(public_path('img/catalog/products'), $image);
+                }
                 $model = Product::find($id);
                 $model->name = $request->input('name');
                 $model->description = $request->input('description');
                 $model->price = $request->input('price');
+                if (isset($image)) {
+                    $model->img = $image;
+                }
                 $model->slug = $request->input('slug');
                 $model->save();
                 /* product to category */
