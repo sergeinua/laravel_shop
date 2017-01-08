@@ -235,12 +235,6 @@
         </div>
     </div>
 </div>
-{{--<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=RsxPYni5vHMFONNNXKVOoyXo9V4Ow6R6Dr1ErgltjxgYq1XsbkuZbHoDnx/UNwf3tgnWYWH4dTquGFsiNg26Zi6znx6FjmxBK190e5nBJLrpRZg4CqsbFztsK6saoQoSDnMwZTxlbK8cN4aVdrbhe/vWCyyxxdmKxPclWZMV5gQ-&pixel_id=1000014142';</script>--}}
-<!-- VK Widget -->
-{{--<div id="vk_community_messages"></div>--}}
-<!-- VK Widget -->
-{{--<div id="vk_community_messages"></div>--}}
-
 <div id="fancybox-tmp"></div>
 <div id="fancybox-loading">
     <div></div>

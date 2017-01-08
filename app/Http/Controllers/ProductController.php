@@ -119,10 +119,19 @@ class ProductController extends Controller
                 $model->save();
                 /* product to category */
                 if (! empty($request->input('category_id'))) {
-                    $pc = new ProductCategory();
-                    $pc->product_id = $model->id;
-                    $pc->category_id = $request->input('category_id');
-                    $pc->save();
+                    $exists = false;
+                    $exists = ProductCategory::where('product_id', $model->id)
+                        ->exists();
+                    if ($exists) {
+                        $pc = ProductCategory::where('product_id', $model->id)->first();
+                        $pc->category_id = $request->input('category_id');
+                        $pc->save();
+                    } else {
+                        $pc = new ProductCategory();
+                        $pc->product_id = $model->id;
+                        $pc->category_id = $request->input('category_id');
+                        $pc->save();
+                    }
                 } else {
                     ProductCategory::where('product_id', $id)
                         ->delete();

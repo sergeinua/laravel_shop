@@ -56,4 +56,20 @@ class SiteController extends Controller
     {
         return view('');
     }
+
+    /**
+     * Displays product page
+     *
+     * @param $category
+     * @param $slug
+     * @return $this
+     */
+    public function product($category, $slug)
+    {
+        $model = Product::where('slug', $slug)
+            ->first();
+
+        return view('site.product')
+            ->with(['model' => $model]);
+    }
 }
