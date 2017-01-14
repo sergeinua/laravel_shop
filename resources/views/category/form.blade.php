@@ -14,7 +14,7 @@
                             <div class="alert alert-danger">{{ Session::get('error') }}</div>
                         @endif
 
-                        {{ Form::open(['url' => $form_action, 'method' => 'POST', 'id' => 'category', 'class' => 'clearfix']) }}
+                        {{ Form::open(['url' => $form_action, 'method' => 'POST', 'id' => 'category', 'class' => 'clearfix', 'enctype' => 'multipart/form-data']) }}
 
                         <div class="form-group input-group-lg">
                             {{ Form::text('name', isset($model->name) ? $model->name : null, ['placeholder' => 'название', 'class' => 'form-control']) }}
@@ -34,6 +34,17 @@
 
                         <div class="form-group input-group-lg">
                             {{ Form::textarea('description', isset($model->description) ? $model->description : null, ['placeholder' => 'описание', 'class' => 'form-control']) }}
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 col-xs-12">
+                                {{ Form::file('img') }}
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12">
+                                @if(isset($model->img))
+                                    <img style="height: 50px;" src="/img/catalog/{{$model->img}}">
+                                @endif
+                            </div>
                         </div>
 
                         {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}

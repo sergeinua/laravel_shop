@@ -166,7 +166,7 @@
 
                 <li class="">
                     <a href="/catalog/{{ $category->slug }}">
-                        <img src="/img/catalog/cats/{{ $category->slug }}.jpg" alt=""
+                        <img src="/img/catalog/{{ $category->img }}" alt=""
                              title="{{ $category->name }}" class="b-img">
                     </a>
                 </li>

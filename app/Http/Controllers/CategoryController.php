@@ -42,12 +42,19 @@ class CategoryController extends Controller
                 return Redirect::to('admin/category/add')
                     ->withErrors($validator);
             } else {
+                if (! empty($request->file('img'))) {
+                    $image = $request->file('img')->store('cats');
+                    $request->file('img')->move(public_path('img/catalog/cats'), $image);
+                }
                 $model = new Category();
                 $model->name = $request->input('name');
                 $model->slug = $request->input('slug');
                 $model->parent_id = ($request->input('parent_id') == '') ? '0' : $request->input('parent_id');
                 $model->status = $request->input('status');
                 $model->description = $request->input('description');
+                if (isset($image)) {
+                    $model->img = $image;
+                }
                 $model->save();
                 Session::flash('success', 'Категория сохранена');
 
@@ -76,11 +83,18 @@ class CategoryController extends Controller
         $model = Category::find($id);
 
         if ($request->isMethod('post')) {
+            if (! empty($request->file('img'))) {
+                $image = $request->file('img')->store('cats');
+                $request->file('img')->move(public_path('img/catalog/cats'), $image);
+            }
             $model->name = $request->input('name');
             $model->slug = $request->input('slug');
             $model->description = $request->input('description');
             $model->parent_id = ($request->input('parent_id') == '') ? '0' : $request->input('parent_id');
             $model->status = $request->input('status');
+            if (isset($image)) {
+                $model->img = $image;
+            }
             $model->save();
 
             return redirect(route('category_list'));
