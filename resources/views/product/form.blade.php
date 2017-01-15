@@ -42,11 +42,44 @@
                                 {{ Form::file('img') }}
                             </div>
                             <div class="form-group col-md-6 col-xs-12">
-                                @if($model->img)
+                                @if(isset($model->img))
                                     <img style="height: 50px;" src="/img/catalog/{{$model->img}}">
                                 @endif
                             </div>
                         </div>
+                        @if(isset($model))
+                            <div>
+                                <hr>
+                                <div class="text-center">Опции товара</div>
+                                <hr>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <ul class="actual-colors">
+                                            @if($product_options)
+                                                <span>Доступные цвета:</span>
+                                                @foreach($product_options as $key => $value)
+                                                    <li style="margin-top: 10px"><a class="btn btn-danger" onclick="deleteOption({{$key}})">удалить</a> {{$value}}</li>
+                                                @endforeach
+                                            @else
+                                                <span>У товара нет добавленных цветов.</span>
+                                            @endif
+                                        </ul>
+                                        <div id="options_result"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        {{ Form::select('option_id', $color_options, null,['class' => 'form-control', 'id' => 'option_id']) }}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <button id="btn">Добавить цвет</button>
+                                    </div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                            </div>
+                        @endif
 
                         {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}
 
@@ -62,7 +95,32 @@
             $('textarea').summernote({
                 height: 300
             });
-        })
+            @if(isset($model))
+                $('button#btn').click(function (event) {
+                    event.preventDefault();
+                    var option_id = $('#option_id').val(),
+                        product_id = "{{$model->id}}";
+                    var data = {
+                        option_id: option_id,
+                        product_id: product_id
+                    };
+                    $.post('/api/option', data, function (error) {
+                        console.log(error)
+                    }).done(function(response) {
+                        window.location.reload();
+                    });
+                    return false;
+                });
+            @endif
+        });
+        function deleteOption(item_id) {
+            var url = '/api/option/delete/' + item_id;
+            $.post(url, null, function (error) {
+                console.log(error);
+            }).done(function () {
+                window.location.reload();
+            });
+        }
     </script>
 
 @stop

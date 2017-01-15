@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Option;
 use App\Product;
 use App\ProductCategory;
+use App\ProductOption;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
@@ -77,11 +79,13 @@ class ProductController extends Controller
 
         $form_action = route('product_add');
         $category_list = Category::getCategoryList();
+        $product_options = Option::getOptions();
 
         return view('product.form')
             ->with([
                 'form_action' => $form_action,
-                'category_list' => $category_list
+                'category_list' => $category_list,
+                'product_options' => $product_options
             ]);
     }
 
@@ -146,12 +150,16 @@ class ProductController extends Controller
         $category_list = Category::getCategoryList();
         $model = Product::find($id);
         $category_id = (ProductCategory::where(['product_id' => $id])->first()) ? ProductCategory::where(['product_id' => $id])->first()->category_id : null;
+        $color_options = Option::getOptions();
+        $product_options = ProductOption::getProductOptions($model->id);
 
         return view('product.form')->with([
             'form_action' => $form_action,
             'category_list' => $category_list,
             'category_id' => $category_id,
-            'model' => $model
+            'model' => $model,
+            'color_options' => $color_options,
+            'product_options' => $product_options
         ]);
     }
 }

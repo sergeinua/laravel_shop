@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+//Route::get('/user', function (Request $request) {
+//    return $request->user();
+//})->middleware('auth:api');
+
+Route::get('/options/{product_id}', [
+    'uses' => 'RequestController@getOptions'
+]);
+
+Route::post('/option', [
+    'uses' => 'RequestController@postOption'
+]);
+
+Route::post('/option/delete/{item_id}', [
+    'uses' => 'RequestController@deleteOption'
+]);
