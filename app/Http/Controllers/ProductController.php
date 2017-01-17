@@ -44,12 +44,11 @@ class ProductController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'price' => 'required',
-                'slug' => 'required'
+                'slug' => 'required|unique'
             ]);
             if ($validator->fails()) {
                 Session::flash('error', 'Ошибка валидации');
-                return Redirect::to('admin/product/add')
-                    ->withErrors($validator);
+                return back();
             } else {
                 if (! empty($request->file('img'))) {
                     $image = $request->file('img')->store('products');
@@ -98,21 +97,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $model = Product::find($id);
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
-                'price' => 'required'
+                'price' => 'required',
+                'slug' => 'required|unique:product,id'
             ]);
             if ($validator->fails()) {
                 Session::flash('error', 'Ошибка валидации');
-                return Redirect::to('admin/product/add')
-                    ->withErrors($validator);
+                return back();
             } else {
                 if (! empty($request->file('img'))) {
                     $image = $request->file('img')->store('products');
                     $request->file('img')->move(public_path('img/catalog/products'), $image);
                 }
-                $model = Product::find($id);
                 $model->name = $request->input('name');
                 $model->description = $request->input('description');
                 $model->price = $request->input('price');
@@ -148,7 +147,6 @@ class ProductController extends Controller
 
         $form_action = route('product_update', ['id' => $id]);
         $category_list = Category::getCategoryList();
-        $model = Product::find($id);
         $category_id = (ProductCategory::where(['product_id' => $id])->first()) ? ProductCategory::where(['product_id' => $id])->first()->category_id : null;
         $color_options = Option::getOptions();
         $product_options = ProductOption::getProductOptions($model->id);
