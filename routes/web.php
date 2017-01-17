@@ -54,3 +54,10 @@ Route::any('/admin/product/add', 'ProductController@create')
     ->name('product_add');
 Route::any('/admin/product/edit/{id}', 'ProductController@update')
     ->name('product_update');
+/* options */
+Route::get('/admin/option', 'OptionController@index')
+    ->name('option_list');
+Route::any('/admin/option/add', 'OptionController@create')
+    ->name('option_add');
+Route::any('/admin/option/update/{id}', 'OptionController@update')
+    ->name('option_update');
