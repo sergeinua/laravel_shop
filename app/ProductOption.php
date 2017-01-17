@@ -13,7 +13,11 @@ class ProductOption extends Model
         $models = ProductOption::where('product_id', $product_id)->get();
         $result = [];
         foreach ($models as $item) {
-            $result[$item->id] = Option::find($item->option_id)->description;
+            $option = Option::find($item->option_id);
+            $result[$item->id] = [
+                'description' => $option->description,
+                'img' => $option->img
+            ];
         }
 
         return $result;
