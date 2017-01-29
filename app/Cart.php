@@ -16,6 +16,14 @@ class Cart
         }
     }
 
+    /**
+     * Add product to the cart
+     *
+     * @param $item
+     * @param $id
+     * @param $option_id
+     * @param int $quantity
+     */
     public function add($item, $id, $option_id, $quantity = 1)
     {
         $product = Product::find($id);
@@ -46,5 +54,19 @@ class Cart
 
         $this->total_quan += $quantity;
         $this->total_price += $item->price * $quantity;
+    }
+
+    /**
+     * Increases quantity by 1 for the defined product and option
+     *
+     * @param $product_id
+     * @param $option_id
+     */
+    public function inrease($product_id, $option_id)
+    {
+        ++$this->items[$product_id]['option_id'][$option_id];
+        $this->total_price -= $this->items[$product_id]['price'];
+        ++$this->total_quan;
+
     }
 }

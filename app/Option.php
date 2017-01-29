@@ -18,4 +18,11 @@ class Option extends Model
 
         return $result;
     }
+
+    public static function getImg($id)
+    {
+        $model = Option::find($id);
+
+        return $model->img;
+    }
 }

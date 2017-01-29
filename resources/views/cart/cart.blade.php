@@ -2,7 +2,7 @@
 	@if(Session::has('cart') && (Session::get('cart')->total_quan > 0))
 		<span id="shop-cart-currency" name="руб" course="1" decimals="0" dsep="." tsep="&nbsp;"></span>
 		<span class="cart-isnotempty">
-			<a href="/korzina">
+			<a href="{{ route('shopping_cart') }}">
 				КОРЗИНА:<br>
 				<small>
 					<span class="mini-cart-count" data-count="">товаров: {!! Session::get('cart')->total_quan !!}</span><br/>

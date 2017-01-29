@@ -90,9 +90,9 @@ class SiteController extends Controller
 
     public function shoppingCart(Request $request)
     {
-//        $request->session()->set('cart', null);
-        dd($request->session()->get('cart'));
+        $cart = $request->session()->get('cart');
 
-        return view('site.shopping-cart');
+        return view('site.shopping-cart')
+            ->with(['cart' => $cart]);
     }
 }

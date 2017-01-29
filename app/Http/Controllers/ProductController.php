@@ -162,6 +162,14 @@ class ProductController extends Controller
         ]);
     }
 
+    /**
+     * Add product to the cart
+     *
+     * @param Request $request
+     * @param $id
+     * @param $option_id
+     * @return mixed
+     */
     public function addToCart(Request $request, $id, $option_id)
     {
         $product = Product::find($id);
@@ -169,6 +177,24 @@ class ProductController extends Controller
         $cart = new Cart($old_cart);
 
         $cart->add($product, $product->id, $option_id);
+        $request->session()->put('cart', $cart);
+
+        return redirect()->back();
+    }
+
+    /**
+     * Increases quantity of the defined product in cart
+     *
+     * @param Request $request
+     * @param $product_id
+     * @param $option_id
+     * @return mixed
+     */
+    public function incQuan(Request $request, $product_id, $option_id)
+    {
+        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($old_cart);
+        $cart->inrease($product_id, $option_id);
         $request->session()->put('cart', $cart);
 
         return redirect()->back();
