@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Option;
 use App\Product;
 use App\ProductCategory;
+use App\ProductOption;
 use Illuminate\Http\Request;
 use App\Page;
 
@@ -68,8 +70,29 @@ class SiteController extends Controller
     {
         $model = Product::where('slug', $slug)
             ->first();
+        $product_option_ids = ProductOption::where('product_id', $model->id)
+            ->get();
+        $option_ids = [];
+        foreach ($product_option_ids as $item) {
+            $option_ids[] = $item->option_id;
+        }
+        $product_options = [];
+        foreach ($product_option_ids as $item) {
+            $product_options[] = Option::find($item->option_id);
+        }
 
         return view('site.product')
-            ->with(['model' => $model]);
+            ->with([
+                'model' => $model,
+                'product_options' => $product_options
+            ]);
+    }
+
+    public function shoppingCart(Request $request)
+    {
+//        $request->session()->set('cart', null);
+        dd($request->session()->get('cart'));
+
+        return view('site.shopping-cart');
     }
 }

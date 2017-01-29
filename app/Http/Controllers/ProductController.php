@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Category;
 use App\Option;
 use App\Product;
@@ -159,5 +160,17 @@ class ProductController extends Controller
             'color_options' => $color_options,
             'product_options' => $product_options
         ]);
+    }
+
+    public function addToCart(Request $request, $id, $option_id)
+    {
+        $product = Product::find($id);
+        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($old_cart);
+
+        $cart->add($product, $product->id, $option_id);
+        $request->session()->put('cart', $cart);
+
+        return redirect()->back();
     }
 }

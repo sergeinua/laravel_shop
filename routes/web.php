@@ -20,8 +20,13 @@ Route::get('/catalog/{category}/{slug}', 'SiteController@product')
 Route::get('/catalog/{slug}', 'SiteController@category')
     ->name('site_category');
 /* page */
-Route::get('/{slug}', 'SiteController@page')
-    ->name('site_page');
+//Route::get('/{slug}', 'SiteController@page')
+//    ->name('site_page');
+/* cart */
+Route::get('/shopping-cart', 'SiteController@shoppingCart')
+    ->name('shopping_cart');
+Route::get('/add-to-cart/{id}/{option_id}', 'ProductController@addToCart')
+    ->name('add_to_cart');
 
 Auth::routes();
 

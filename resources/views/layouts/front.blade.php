@@ -124,20 +124,7 @@
             </div>
         </div>
         <div id="top-panel">
-            <div id="shop-cart">
-                <span id="shop-cart-currency" name="руб" course="1" decimals="0" dsep="." tsep="&nbsp;"></span>
-                <span class="cart-isnotempty" style="display: none;">
-									<a href="/korzina">
-										КОРЗИНА:<br> <small>(<span class="cart-count"><span class="mini-cart-count"
-                                                                                            data-count="">0</span>&nbsp;товаров</span>
-										на сумму <span class="cart-price" data-price="">0&nbsp;руб</span>)</small>
-									</a>
-								</span>
-                <span class="cart-isempty">
-									КОРЗИНА:<br>
-									<small>(пусто)</small>
-								</span>
-            </div>
+            @include('cart.cart')
         </div>
     </div>
     <div class="b-header-bottom clearfix">
