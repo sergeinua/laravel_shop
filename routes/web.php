@@ -25,10 +25,14 @@ Route::get('/catalog/{slug}', 'SiteController@category')
 /* cart */
 Route::get('/shopping-cart', 'SiteController@shoppingCart')
     ->name('shopping_cart');
-Route::get('/add-to-cart/{product_id}/{option_id}', 'ProductController@addToCart')
+Route::get('/add-to-cart/{id}/{option_id}', 'ProductController@addToCart')
     ->name('add_to_cart');
-Route::get('/cart-increase/{id}/{option_id}', 'ProductController@incQuan')
+Route::get('/cart-increase/{product_id}/{option_id}', 'ProductController@incQuan')
     ->name('cart_increase');
+Route::get('/cart-decrease/{product_id}/{option_id}', 'ProductController@decQuan')
+    ->name('cart_decrease');
+Route::get('cart-delete/{product_id}/{option_id}', 'ProductController@delItem')
+    ->name('cart_delete');
 
 Auth::routes();
 

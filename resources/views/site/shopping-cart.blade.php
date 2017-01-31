@@ -4,7 +4,7 @@
 
     <div class="text-block" id="block-print">
         <h1>Оптовый склад пряжи</h1>
-        @if ($cart)
+        @if (!empty($cart->items))
             <div class="cart-isnotempty">
                 <form action="{{ route('shopping_cart') }}" method="post" id="oform">
                     <div class="table-responsive">
@@ -14,7 +14,6 @@
                             </tr>
                             @foreach ($cart->items as $item)
                                 @foreach ($item['option_id'] as $option => $quantity)
-{{--                                    {{dd($item['item']->name)}}--}}
                                     <tr>
                                         <td class="td-img">
                                             <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">
@@ -24,26 +23,23 @@
                                             </a>
                                         </td>
                                         <td class="td-info">
-                                            <a href="/katalog/klubochnaya-pryazha/klubki" class="lnk-title">{{ $item['item']->name }}</a>
+                                            <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
                                         </td>
                                         <td class="td-input quantity">
-                                            <a href="#">
+                                            <a href="{{ route('cart_decrease', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
                                                 <input type="button" value="&nbsp;-"
-                                                       class="quantity_box_button button quantity_box_button_down"
-                                                       productid="v10542">
+                                                       class="quantity_box_button button quantity_box_button_down">
                                             </a>
-                                            <input name="data[order][product][v10542]" type="text" value="{{ $quantity }}" price="{{ $item['item']->name }}"
-                                                   productid="v10542" class="cart-count-changer" update=".pvv10542"
-                                                   id="quantityProductv10542">
+                                            <input name="" type="text" value="{{ $quantity }}" price="{{ $item['item']->name }}"
+                                                   class="cart-count-changer" id="quantityProductv10542">
                                             <a href="{{ route('cart_increase', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
                                                 <input type="button" value="+"
-                                                       class="quantity_box_button button quantity_box_button_up"
-                                                       productid="v10542">
+                                                       class="quantity_box_button button quantity_box_button_up">
                                             </a>
                                         </td>
-                                        <td class="td-total pvv10542"><strong>{{ $item['price'] }}</strong>&nbsp;руб</td>
+                                        <td class="td-total pvv10542"><strong>{{ $quantity * $item['price'] }}</strong>&nbsp;руб</td>
                                         <td class="td-del">
-                                            <a class="cart-delete" href="/korzina/delete/v10542" productid="v10542">
+                                            <a class="cart-delete" href="{{ route('cart_delete', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
                                                 <img src="/img/del.png" alt="Удалить">
                                             </a>
                                         </td>

@@ -199,4 +199,40 @@ class ProductController extends Controller
 
         return redirect()->back();
     }
+
+    /**
+     * Decreases quantity of the defined product in cart
+     *
+     * @param Request $request
+     * @param $product_id
+     * @param $option_id
+     * @return mixed
+     */
+    public function decQuan(Request $request, $product_id, $option_id)
+    {
+        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($old_cart);
+        $cart->decrease($product_id, $option_id);
+        $request->session()->put('cart', $cart);
+
+        return redirect()->back();
+    }
+
+    /**
+     * Deletes item from the cart
+     *
+     * @param Request $request
+     * @param $product_id
+     * @param $option_id
+     * @return mixed
+     */
+    public function delItem(Request $request, $product_id, $option_id)
+    {
+        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($old_cart);
+        $cart->delete($product_id, $option_id);
+        $request->session()->put('cart', $cart);
+
+        return redirect()->back();
+    }
 }
