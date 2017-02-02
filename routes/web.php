@@ -25,7 +25,7 @@ Route::get('/catalog/{slug}', 'SiteController@category')
 /* cart */
 Route::get('/shopping-cart', 'SiteController@shoppingCart')
     ->name('shopping_cart');
-Route::get('/add-to-cart/{id}/{option_id}', 'ProductController@addToCart')
+Route::get('/add-to-cart/{id}/{option_id}/{quantity}', 'ProductController@addToCart')
     ->name('add_to_cart');
 Route::get('/cart-increase/{product_id}/{option_id}', 'ProductController@incQuan')
     ->name('cart_increase');

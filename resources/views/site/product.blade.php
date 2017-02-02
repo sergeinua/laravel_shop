@@ -8,7 +8,7 @@
             <div class="backgr clearfix">
                 <div id="ci-photos">
                     <div id="cip-main">
-                        <img src="/img/catalog/{{ $model->img }}" alt="ALPACA ROYAL" title="ALPACA ROYAL" class="b-img">
+                        <img src="/img/catalog/{{ $model->img }}" alt="{{ $model->name }}" title="{{ $model->name }}" class="b-img">
                     </div>
                 </div>
                 <div id="ci-top">
@@ -36,15 +36,16 @@
                                 <p>{{ $product_option->description }}</p>
                             </span>
                             <div class="quantity qty">
-                                <input value="-" class="quantity_box_button quantity_box_button_down_v" productid="8722" type="button">
-                                <input class="inputboxquantity" size="4" productid="533" pricevariant="463" value="1" data-vid="8722" id="quantityProduct8722" type="text">
-                                <input value="+" class="quantity_box_button quantity_box_button_up_v" productid="8722" type="button">
+                                <input value="-" class="quantity_box_button quantity_box_button_down_v" type="button">
+                                <input class="inputboxquantity" size="4" value="1" id="quantity{{ $product_option->code }}" type="text">
+                                <input value="+" class="quantity_box_button quantity_box_button_up_v" type="button">
                             </div>
                             <div class="prod_buy solo-var" style="    margin-top: 15px;">
-                                <a href="{{ route('add_to_cart', [ 'id' => $model->id, 'option_id' => $product_option->id ]) }}" class="button addtocartvariant tc533">
+                                <a href="{{ route('add_to_cart', [ 'id' => $model->id, 'option_id' => $product_option->id,
+                                'quantity' => 1]) }}" class="button addtocartvariant tc533">
                                     <span>Купить</span>
                                 </a>
-                                <a href="/korzina" class="incart ic533" style="display: none;">
+                                <a href="{{ route('shopping_cart') }}" class="incart" style="display: none;">
                                     <span>В корзине</span>
                                 </a>
                             </div>
@@ -54,7 +55,27 @@
                 </ul>
             @endif
         </div>
-
     </div>
-
+    <script>
+        $(document).ready(function() {
+            $('.quantity_box_button_down_v').on('click', function () {
+                var _quan = $(this).parent().find('.inputboxquantity').val();
+                if (_quan > 1) {
+                    $(this).parent().find('.inputboxquantity').val(--_quan);
+                    var _link = $(this).parent().parent().find('.addtocartvariant'),
+                        _url = _link.attr('href');
+                    _url = _url.substring(0, _url.length - 1) + _quan;
+                    _link.attr('href', _url);
+                }
+            });
+            $('.quantity_box_button_up_v').on('click', function () {
+                var _quan = $(this).parent().find('.inputboxquantity').val();
+                $(this).parent().find('.inputboxquantity').val(++_quan);
+                var _link = $(this).parent().parent().find('.addtocartvariant'),
+                    _url = _link.attr('href');
+                _url = _url.substring(0, _url.length - 1) + _quan;
+                _link.attr('href', _url);
+            });
+        })
+    </script>
 @stop

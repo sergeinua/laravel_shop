@@ -170,13 +170,13 @@ class ProductController extends Controller
      * @param $option_id
      * @return mixed
      */
-    public function addToCart(Request $request, $id, $option_id)
+    public function addToCart(Request $request, $id, $option_id, $quantity)
     {
         $product = Product::find($id);
         $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($old_cart);
 
-        $cart->add($product, $product->id, $option_id);
+        $cart->add($product, $product->id, $option_id, $quantity);
         $request->session()->put('cart', $cart);
 
         return redirect()->back();
