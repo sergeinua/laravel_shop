@@ -41,13 +41,22 @@
                                 <input value="+" class="quantity_box_button quantity_box_button_up_v" type="button">
                             </div>
                             <div class="prod_buy solo-var" style="    margin-top: 15px;">
-                                <a href="{{ route('add_to_cart', [ 'id' => $model->id, 'option_id' => $product_option->id,
-                                'quantity' => 1]) }}" class="button addtocartvariant tc533">
-                                    <span>Купить</span>
-                                </a>
-                                <a href="{{ route('shopping_cart') }}" class="incart" style="display: none;">
-                                    <span>В корзине</span>
-                                </a>
+                                @if (\App\ProductBalance::inStock($model->id, $product_option->id))
+
+                                    <a href="{{ route('add_to_cart', [ 'id' => $model->id, 'option_id' => $product_option->id,
+                                    'quantity' => 1]) }}" class="button addtocartvariant tc533">
+                                        <span>Купить</span>
+                                    </a>
+                                    @else
+                                        <a href="{{ route('add_to_cart', [ 'id' => $model->id, 'option_id' => $product_option->id,
+                                        'quantity' => 1]) }}" class="button addtocartvariant tc533" style="padding: 5px">
+                                            <span>Заказать</span>
+                                        </a>
+                                    @endif
+
+                                {{--<a href="{{ route('shopping_cart') }}" class="incart" style="display: none;">--}}
+                                    {{--<span>В корзине</span>--}}
+                                {{--</a>--}}
                             </div>
                         </div>
                     </li>
