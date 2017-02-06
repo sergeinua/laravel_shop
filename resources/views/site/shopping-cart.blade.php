@@ -4,56 +4,104 @@
 
     <div class="text-block" id="block-print">
         <h1>Оптовый склад пряжи</h1>
-        @if (!empty($cart->items))
+        @if (!empty($cart->items) || !empty($cart->items_out))
             <div class="cart-isnotempty">
                 <form action="{{ route('shopping_cart') }}" method="post" id="oform">
                     <div class="table-responsive">
-                        <table cellpadding="0" cellspacing="0" id="cart-tbl">
-                            <tbody>
-                            <tr>
-                            </tr>
-                            @foreach ($cart->items as $item)
-                                @foreach ($item['option_id'] as $option => $quantity)
+                        @if (!empty($cart->items))
+                            <table cellpadding="0" cellspacing="0" id="cart-tbl">
+                                <tbody>
+                                    @foreach ($cart->items as $item)
+                                        @foreach ($item['option_id'] as $option => $quantity)
+                                            <tr>
+                                                <td class="td-img">
+                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">
+                                                        <img src="/img/catalog/{{ \App\Option::getImg($option) }}"
+                                                             width="170" height="170" id="491"
+                                                             title="{{ $item['item']->name }}}" alt="{{ $item['item']->name }}">
+                                                    </a>
+                                                </td>
+                                                <td class="td-info">
+                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
+                                                </td>
+                                                <td class="td-input quantity">
+                                                    <a href="{{ route('cart_decrease', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
+                                                        <input type="button" value="&nbsp;-"
+                                                               class="quantity_box_button button quantity_box_button_down">
+                                                    </a>
+                                                    <input name="" type="text" value="{{ $quantity }}" price="{{ $item['item']->name }}"
+                                                           class="cart-count-changer" id="quantityProductv10542">
+                                                    <a href="{{ route('cart_increase', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
+                                                        <input type="button" value="+"
+                                                               class="quantity_box_button button quantity_box_button_up">
+                                                    </a>
+                                                </td>
+                                                <td class="td-total pvv10542"><strong>{{ $quantity * $item['price'] }}</strong>&nbsp;руб</td>
+                                                <td class="td-del">
+                                                    <a class="cart-delete" href="{{ route('cart_delete', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
+                                                        <img src="/img/del.png" alt="Удалить">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @endforeach
                                     <tr>
-                                        <td class="td-img">
-                                            <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">
-                                                <img src="/img/catalog/{{ \App\Option::getImg($option) }}"
-                                                     width="170" height="170" id="491"
-                                                     title="{{ $item['item']->name }}}" alt="{{ $item['item']->name }}">
-                                            </a>
-                                        </td>
-                                        <td class="td-info">
-                                            <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
-                                        </td>
-                                        <td class="td-input quantity">
-                                            <a href="{{ route('cart_decrease', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
-                                                <input type="button" value="&nbsp;-"
-                                                       class="quantity_box_button button quantity_box_button_down">
-                                            </a>
-                                            <input name="" type="text" value="{{ $quantity }}" price="{{ $item['item']->name }}"
-                                                   class="cart-count-changer" id="quantityProductv10542">
-                                            <a href="{{ route('cart_increase', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
-                                                <input type="button" value="+"
-                                                       class="quantity_box_button button quantity_box_button_up">
-                                            </a>
-                                        </td>
-                                        <td class="td-total pvv10542"><strong>{{ $quantity * $item['price'] }}</strong>&nbsp;руб</td>
-                                        <td class="td-del">
-                                            <a class="cart-delete" href="{{ route('cart_delete', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
-                                                <img src="/img/del.png" alt="Удалить">
-                                            </a>
+                                        <td colspan="3" align="right">Итого:&nbsp;</td>
+                                        <td colspan="2">
+                                            <div id="cart-total"><strong>{{ $cart->total_price }}</strong>&nbsp;руб</div>
                                         </td>
                                     </tr>
-                                @endforeach
-                            @endforeach
-                            <tr>
-                                <td colspan="3" align="right">Итого:&nbsp;</td>
-                                <td colspan="2">
-                                    <div id="cart-total"><strong>{{ $cart->total_price }}</strong>&nbsp;руб</div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        @endif
+                        <hr>
+                        @if (!empty($cart->items_out))
+                            <h2>Позиции под заказ</h2>
+                            <table cellpadding="0" cellspacing="0" id="cart-tbl">
+                                <tbody>
+                                    @foreach ($cart->items_out as $item)
+                                        @foreach ($item['option_id'] as $option => $quantity)
+                                            <tr>
+                                                <td class="td-img">
+                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">
+                                                        <img src="/img/catalog/{{ \App\Option::getImg($option) }}"
+                                                             width="170" height="170" id="491"
+                                                             title="{{ $item['item']->name }}}" alt="{{ $item['item']->name }}">
+                                                    </a>
+                                                </td>
+                                                <td class="td-info">
+                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
+                                                </td>
+                                                <td class="td-input quantity">
+                                                    <a href="{{ route('cart_decrease', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
+                                                        <input type="button" value="&nbsp;-"
+                                                               class="quantity_box_button button quantity_box_button_down">
+                                                    </a>
+                                                    <input name="" type="text" value="{{ $quantity }}" price="{{ $item['item']->name }}"
+                                                           class="cart-count-changer" id="quantityProductv10542">
+                                                    <a href="{{ route('cart_increase', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
+                                                        <input type="button" value="+"
+                                                               class="quantity_box_button button quantity_box_button_up">
+                                                    </a>
+                                                </td>
+                                                <td class="td-total pvv10542"><strong>{{ $quantity * $item['price'] }}</strong>&nbsp;руб</td>
+                                                <td class="td-del">
+                                                    <a class="cart-delete" href="{{ route('cart_delete', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
+                                                        <img src="/img/del.png" alt="Удалить">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @endforeach
+                                    <tr>
+                                        <td colspan="3" align="right">Итого:&nbsp;</td>
+                                        <td colspan="2">
+                                            <div id="cart-total"><strong>{{ $cart->total_price_out }}</strong>&nbsp;руб</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        @endif
                     </div>
                     <h2 class="oform_order">Оформить заказ</h2>
                     <div id="contactForm">
@@ -113,6 +161,12 @@
                     });
                 </script>
             </div>
+
+
+
+
+
+
         @else
             <div class="cart-isempty" style="margin-top: 25px;">
                 <p>Ваша корзина пуста.</p>
