@@ -31,8 +31,11 @@ Route::get('/cart-increase/{product_id}/{option_id}', 'ProductController@incQuan
     ->name('cart_increase');
 Route::get('/cart-decrease/{product_id}/{option_id}', 'ProductController@decQuan')
     ->name('cart_decrease');
-Route::get('cart-delete/{product_id}/{option_id}', 'ProductController@delItem')
+Route::get('/cart-delete/{product_id}/{option_id}', 'ProductController@delItem')
     ->name('cart_delete');
+/* order */
+Route::post('/order', 'SiteController@createOrder')
+    ->name('order_post');
 
 Auth::routes();
 

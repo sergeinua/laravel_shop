@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Option;
+use App\Order;
 use App\Product;
 use App\ProductCategory;
 use App\ProductOption;
@@ -88,11 +89,63 @@ class SiteController extends Controller
             ]);
     }
 
+    /**
+     * Displays shopping cart page
+     *
+     * @param Request $request
+     * @return $this
+     */
     public function shoppingCart(Request $request)
     {
         $cart = $request->session()->get('cart');
 
         return view('site.shopping-cart')
             ->with(['cart' => $cart]);
+    }
+
+    /**
+     * Creates order and renders order page with notification
+     *
+     * @param Request $request
+     * @return $this
+     */
+    public function createOrder(Request $request)
+    {
+        $saved = false;
+        $cart = $request->session()->get('cart');
+        //available items
+        if ($items_cur = $cart->items) {
+            foreach ($items_cur as $key => $item) {
+                unset($items_cur[$key]['price']);
+                unset($items_cur[$key]['item']);
+            }
+            $order_current = new Order();
+            $order_current->status = 'pending';
+            $order_current->cus_name = $request->input('name');
+            $order_current->cus_tel = $request->input('tel_num');
+            $order_current->cus_email = $request->input('email');
+            $order_current->items = json_encode($items_cur);
+            $saved = $order_current->save();
+        }
+        //pre ordered items
+        if ($items_pre = $cart->items_out) {
+            foreach ($items_pre as $key => $item) {
+                unset($items_pre[$key]['price']);
+                unset($items_pre[$key]['item']);
+            }
+            $order_pre = new Order();
+            $order_pre->status = 'preorder';
+            $order_pre->cus_name = $request->input('name');
+            $order_pre->cus_tel = $request->input('tel_num');
+            $order_pre->cus_email = $request->input('email');
+            $order_pre->items = json_encode($items_pre);
+            $saved = $order_pre->save();
+        }
+        //clearing cart
+        if ($saved)
+            $request->session()->clear();
+
+        return view('site.order')
+            ->with('status', $saved);
     }
 }

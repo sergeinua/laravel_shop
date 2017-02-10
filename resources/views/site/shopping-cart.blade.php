@@ -6,7 +6,7 @@
         <h1>Оптовый склад пряжи</h1>
         @if (!empty($cart->items) || !empty($cart->items_out))
             <div class="cart-isnotempty">
-                <form action="{{ route('shopping_cart') }}" method="post" id="oform">
+                {{ Form::open(['url' => route('order_post'), 'method' => 'POST', 'id' => 'oform', 'enctype' => 'multipart/form-data']) }}
                     <div class="table-responsive">
                         @if (!empty($cart->items))
                             <table cellpadding="0" cellspacing="0" id="cart-tbl">
@@ -107,56 +107,53 @@
                     <div id="contactForm">
                         <div id="min_price" style="color:red;font-size:24px;display:none;">
                             Минимальный заказ в нашем магазине от 15000 рублей
-                            <p><a href="/katalog">Продолжить покупки→</a></p>
+                            <p><a href="{{ route('home_page') }}">Продолжить покупки→</a></p>
                         </div>
                         <div class="label"><em>Укажите, пожалуйста, своё имя, телефон или e-mail.</em></div>
                         <br>
                         <div class="left_cont">
                             <div>
                                 <label for="name">Ваше имя:<span>*</span></label>
-                                <input type="text" class="text" id="order_user_name" name="data[order][user_name]"
-                                       value="">
+                                <input type="text" class="text" id="order_user_name" name="name">
                             </div>
                             <br>
                             <div>
                                 <label for="email">Телефон:<span>*</span></label>
-                                <input type="text" class="text" id="order_user_phone" name="data[order][user_phone]"
-                                       value="">
+                                <input type="text" class="text" id="order_user_phone" name="tel_num">
                             </div>
                             <br>
                             <div>
                                 <label for="email">E-mail:</label>
-                                <input type="text" class="text" id="order_user_email" name="data[order][user_email]"
-                                       value="">
+                                <input type="text" class="text" id="order_user_email" name="email">
                             </div>
                         </div>
                         <div>
                             <label for="message">Комментарий к заказу:</label>
-                            <textarea id="message" name="data[order][user_comment]" style="height:120px;"></textarea>
+                            <textarea id="message" name="comment" style="height:120px;"></textarea>
                         </div>
                         <div style="margin-top: 5px;">
                             <input type="submit" value="Оформить заказ" id="submitBut" class="submit button">
                         </div>
                     </div>
-                </form>
+                {{ Form::close() }}
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $('#oform').bind('submit', function () {
-                            if ($('.cart-price').attr('data-price') < 15000) {
-                                $('#min_price').css('display', 'block');
-                                $('#min_price').focus();
-                                return false;
-                            }
-                            if ($('#order_user_name').attr('value') == '') {
-                                alert('Введите, пожалуйста, свое имя.');
-                                $('#order_user_name').focus();
-                                return false;
-                            }
-                            if ($('#order_user_phone').attr('value') == '') {
-                                alert('Укажите, пожалуйста, свой телефон');
-                                $('#order_user_phone').focus();
-                                return false;
-                            }
+//                            if ($('.cart-price').attr('data-price') < 15000) {
+//                                $('#min_price').css('display', 'block');
+//                                $('#min_price').focus();
+//                                return false;
+//                            }
+//                            if ($('#order_user_name').attr('value') == '') {
+//                                alert('Введите, пожалуйста, свое имя.');
+//                                $('#order_user_name').focus();
+//                                return false;
+//                            }
+//                            if ($('#order_user_phone').attr('value') == '') {
+//                                alert('Укажите, пожалуйста, свой телефон');
+//                                $('#order_user_phone').focus();
+//                                return false;
+//                            }
                         });
                     });
                 </script>
