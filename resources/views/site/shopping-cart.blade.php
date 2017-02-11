@@ -105,26 +105,25 @@
                     </div>
                     <h2 class="oform_order">Оформить заказ</h2>
                     <div id="contactForm">
-                        <div id="min_price" style="color:red;font-size:24px;display:none;">
-                            Минимальный заказ в нашем магазине от 15000 рублей
-                            <p><a href="{{ route('home_page') }}">Продолжить покупки→</a></p>
-                        </div>
                         <div class="label"><em>Укажите, пожалуйста, своё имя, телефон или e-mail.</em></div>
                         <br>
                         <div class="left_cont">
                             <div>
                                 <label for="name">Ваше имя:<span>*</span></label>
                                 <input type="text" class="text" id="order_user_name" name="name">
+                                <div class="validation" id="error-name">Введите имя</div>
                             </div>
                             <br>
                             <div>
                                 <label for="email">Телефон:<span>*</span></label>
                                 <input type="text" class="text" id="order_user_phone" name="tel_num">
+                                <div class="validation" id="error-tel">Введите номер телефона</div>
                             </div>
                             <br>
                             <div>
-                                <label for="email">E-mail:</label>
-                                <input type="text" class="text" id="order_user_email" name="email">
+                                <label for="email">E-mail:<span>*</span></label>
+                                <input type="email" class="text" id="order_user_email" name="email">
+                                <div class="validation" id="error-email">Введите email</div>
                             </div>
                         </div>
                         <div>
@@ -139,31 +138,43 @@
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $('#oform').bind('submit', function () {
-//                            if ($('.cart-price').attr('data-price') < 15000) {
-//                                $('#min_price').css('display', 'block');
-//                                $('#min_price').focus();
-//                                return false;
-//                            }
-//                            if ($('#order_user_name').attr('value') == '') {
-//                                alert('Введите, пожалуйста, свое имя.');
-//                                $('#order_user_name').focus();
-//                                return false;
-//                            }
-//                            if ($('#order_user_phone').attr('value') == '') {
-//                                alert('Укажите, пожалуйста, свой телефон');
-//                                $('#order_user_phone').focus();
-//                                return false;
-//                            }
+                            var error = false;
+                            if ($('#order_user_name').val().length == 0) {
+                                $('#error-name').addClass('error');
+                                $('#order_user_name').focus();
+                                error = true;
+                            } else {
+                                $('#error-name').removeClass('error');
+                            }
+                            if ($('#order_user_phone').val().length == 0) {
+                                $('#error-tel').addClass('error');
+                                $('#order_user_phone').focus();
+                                error = true;
+                            } else {
+                                $('#error-tel').removeClass('error');
+                            }
+                            if ($('#order_user_email').val().length == 0) {
+                                $('#error-email').addClass('error');
+                                $('#order_user_email').focus();
+                                error = true;
+                            } else {
+                                $('#error-email').removeClass('error');
+                            }
+                            if (error)
+                                return false;
                         });
                     });
                 </script>
             </div>
-
-
-
-
-
-
+            <style>
+                .validation {
+                    display: none;
+                }
+                .validation.error {
+                    display: block;
+                    color: red;
+                }
+            </style>
         @else
             <div class="cart-isempty" style="margin-top: 25px;">
                 <p>Ваша корзина пуста.</p>
