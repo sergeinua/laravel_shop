@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Redirect;
 
 class OptionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Renders list of the options
      *

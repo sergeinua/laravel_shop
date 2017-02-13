@@ -12,9 +12,14 @@ class PageController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware('auth');
+        $this->middleware('auth');
     }
 
+    /**
+     * Dosplays list of the existing pages
+     *
+     * @return $this
+     */
     public function index()
     {
         $model = Page::all()
@@ -99,6 +104,12 @@ class PageController extends Controller
             ]);
     }
 
+    /**
+     * Updates home page
+     *
+     * @param Request $request
+     * @return $this|Redirect
+     */
     public function homePage(Request $request)
     {
         $form_action = route('page_home');

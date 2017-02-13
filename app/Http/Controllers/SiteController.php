@@ -125,6 +125,7 @@ class SiteController extends Controller
             $order_current->cus_tel = $request->input('tel_num');
             $order_current->cus_email = $request->input('email');
             $order_current->items = json_encode($items_cur);
+            $order_current->read = 0;
             $saved = $order_current->save();
         }
         //pre ordered items
@@ -139,6 +140,7 @@ class SiteController extends Controller
             $order_pre->cus_tel = $request->input('tel_num');
             $order_pre->cus_email = $request->input('email');
             $order_pre->items = json_encode($items_pre);
+            $order_pre->read = 0;
             $saved = $order_pre->save();
         }
         //clearing cart

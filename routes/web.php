@@ -41,7 +41,9 @@ Auth::routes();
 
 /* orders */
 Route::get('/admin', 'OrderController@index');
-Route::get('/admin/orders', 'OrderController@index');
+Route::get('/admin/order', 'OrderController@index');
+Route::get('/admin/order/{id}', 'OrderController@show')
+    ->name('order_show');
 /* category */
 Route::get('/admin/category', 'CategoryController@index')
     ->name('category_list');

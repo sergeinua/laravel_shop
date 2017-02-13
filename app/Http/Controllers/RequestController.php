@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class RequestController extends Controller
 {
+    /**
+     * Adds option for the product via post request
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function postOption(Request $request)
     {
         $exists = ProductOption::where([
@@ -24,6 +30,12 @@ class RequestController extends Controller
         return response()->json(false, 200);
     }
 
+    /**
+     * Returns all options for the defined product
+     *
+     * @param $product_id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getOptions($product_id)
     {
         $model = ProductOption::where('product_id', $product_id)->get();
@@ -31,6 +43,12 @@ class RequestController extends Controller
         return response()->json($model, 200);
     }
 
+    /**
+     * Deletes option for the product
+     *
+     * @param $item_id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function deleteOption($item_id)
     {
         ProductOption::destroy($item_id);

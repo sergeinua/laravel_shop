@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -10,6 +11,7 @@ class OrderController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Displays list of the orders
      *
@@ -17,7 +19,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('order.index');
+        $orders = Order::all();
+
+        return view('order.index')
+            ->with('orders', $orders);
     }
 
     /**
@@ -42,14 +47,19 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Displays the specified order.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $model = Order::find($id);
+        $items = json_decode($model->items);
+        dd($items);
+
+        return view('order.show')
+            ->with('model', $model);
     }
 
     /**

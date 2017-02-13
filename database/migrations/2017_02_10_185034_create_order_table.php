@@ -21,6 +21,7 @@ class CreateOrderTable extends Migration
             $table->string('cus_tel')->nullable();
             $table->string('cus_email')->nullable();
             $table->string('items')->nullable();
+            $table->integer('read', 1)->nullable();
         });
     }
 
