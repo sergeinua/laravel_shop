@@ -60,7 +60,6 @@ class Cart
                 // cart was empty
                 $this->items[$id] = $stored_item;
             }
-
             $this->total_quan += $quantity;
             $this->total_price += $item->price * $quantity;
         } else {
@@ -84,7 +83,6 @@ class Cart
                 // cart was empty
                 $this->items_out[$id] = $stored_item;
             }
-
             $this->total_quan_out += $quantity;
             $this->total_price_out += $item->price * $quantity;
         }
@@ -96,7 +94,7 @@ class Cart
      * @param $product_id
      * @param $option_id
      */
-    public function inrease($product_id, $option_id)
+    public function increase($product_id, $option_id)
     {
         //in stock items
         if (isset($this->items[$product_id]['option_id'][$option_id])) {
@@ -199,6 +197,5 @@ class Cart
             unset($this->items_out[$product_id]['option_id'][$option_id]);
         }
         $this->clearEmptyItems($product_id);
-
     }
 }

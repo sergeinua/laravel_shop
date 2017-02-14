@@ -17,7 +17,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -194,7 +194,7 @@ class ProductController extends Controller
     {
         $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($old_cart);
-        $cart->inrease($product_id, $option_id);
+        $cart->increase($product_id, $option_id);
         $request->session()->put('cart', $cart);
 
         return redirect()->back();

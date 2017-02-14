@@ -15,14 +15,14 @@
                                         @foreach ($item['option_id'] as $option => $quantity)
                                             <tr>
                                                 <td class="td-img">
-                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">
+                                                    <a href="{{ \App\Product::getUrl($item['item']->id) }}" class="lnk-title">
                                                         <img src="/img/catalog/{{ \App\Option::getImg($option) }}"
                                                              width="170" height="170" id="491"
                                                              title="{{ $item['item']->name }}}" alt="{{ $item['item']->name }}">
                                                     </a>
                                                 </td>
                                                 <td class="td-info">
-                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
+                                                    <a href="{{ \App\Product::getUrl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
                                                 </td>
                                                 <td class="td-input quantity">
                                                     <a href="{{ route('cart_decrease', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">
@@ -63,14 +63,14 @@
                                         @foreach ($item['option_id'] as $option => $quantity)
                                             <tr>
                                                 <td class="td-img">
-                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">
+                                                    <a href="{{ \App\Product::getUrl($item['item']->id) }}" class="lnk-title">
                                                         <img src="/img/catalog/{{ \App\Option::getImg($option) }}"
                                                              width="170" height="170" id="491"
                                                              title="{{ $item['item']->name }}}" alt="{{ $item['item']->name }}">
                                                     </a>
                                                 </td>
                                                 <td class="td-info">
-                                                    <a href="{{ \App\Product::getUtl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
+                                                    <a href="{{ \App\Product::getUrl($item['item']->id) }}" class="lnk-title">{{ $item['item']->name }}</a>
                                                 </td>
                                                 <td class="td-input quantity">
                                                     <a href="{{ route('cart_decrease', ['product_id' => $item['item']->id, 'option_id' => $option]) }}">

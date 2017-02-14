@@ -8,6 +8,11 @@ class Option extends Model
 {
     protected $table = 'option';
 
+    /**
+     * Returns array of all available options
+     *
+     * @return array
+     */
     public static function getOptions()
     {
         $model = Option::all();
@@ -19,10 +24,36 @@ class Option extends Model
         return $result;
     }
 
+    /**
+     * Returns img url for the defined option_id
+     *
+     * @param $id
+     * @return mixed
+     */
     public static function getImg($id)
     {
-        $model = Option::find($id);
+        return Option::find($id)->img;
+    }
 
-        return $model->img;
+    /**
+     * Returns code for the defined option_id
+     *
+     * @param $id
+     * @return mixed
+     */
+    public static function getCode($id)
+    {
+        return Option::find($id)->code;
+    }
+
+    /**
+     * Returns description for the defined option_id
+     *
+     * @param $id
+     * @return mixed
+     */
+    public static function getDescription($id)
+    {
+        return Option::find($id)->description;
     }
 }

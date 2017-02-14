@@ -56,10 +56,11 @@ class OrderController extends Controller
     {
         $model = Order::find($id);
         $items = json_decode($model->items);
-        dd($items);
 
-        return view('order.show')
-            ->with('model', $model);
+        return view('order.show')->with([
+                'model' => $model,
+                'items' => $items
+            ]);
     }
 
     /**
