@@ -121,7 +121,7 @@ class SiteController extends Controller
                 unset($items_cur[$key]['item']);
             }
             $order_current = new Order();
-            $order_current->status = 'pending';
+            $order_current->status = Order::STATUS_PENDING;
             $order_current->cus_name = $request->input('name');
             $order_current->cus_tel = $request->input('tel_num');
             $order_current->cus_email = $request->input('email');
@@ -137,7 +137,7 @@ class SiteController extends Controller
                 unset($items_pre[$key]['item']);
             }
             $order_pre = new Order();
-            $order_pre->status = 'preorder';
+            $order_pre->status = Order::STATUS_PREORDER;
             $order_pre->cus_name = $request->input('name');
             $order_pre->cus_tel = $request->input('tel_num');
             $order_pre->cus_email = $request->input('email');
