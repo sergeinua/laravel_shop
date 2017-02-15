@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Cart;
 use App\Category;
 use App\Option;
 use App\Product;
@@ -17,7 +16,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -160,79 +159,5 @@ class ProductController extends Controller
             'color_options' => $color_options,
             'product_options' => $product_options
         ]);
-    }
-
-    /**
-     * Add product to the cart
-     *
-     * @param Request $request
-     * @param $id
-     * @param $option_id
-     * @return mixed
-     */
-    public function addToCart(Request $request, $id, $option_id, $quantity)
-    {
-        $product = Product::find($id);
-        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($old_cart);
-
-        $cart->add($product, $product->id, $option_id, $quantity);
-        $request->session()->put('cart', $cart);
-
-        return redirect()->back();
-    }
-
-    /**
-     * Increases quantity of the defined product in cart
-     *
-     * @param Request $request
-     * @param $product_id
-     * @param $option_id
-     * @return mixed
-     */
-    public function incQuan(Request $request, $product_id, $option_id)
-    {
-        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($old_cart);
-        $cart->increase($product_id, $option_id);
-        $request->session()->put('cart', $cart);
-
-        return redirect()->back();
-    }
-
-    /**
-     * Decreases quantity of the defined product in cart
-     *
-     * @param Request $request
-     * @param $product_id
-     * @param $option_id
-     * @return mixed
-     */
-    public function decQuan(Request $request, $product_id, $option_id)
-    {
-        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($old_cart);
-        $cart->decrease($product_id, $option_id);
-        $request->session()->put('cart', $cart);
-
-        return redirect()->back();
-    }
-
-    /**
-     * Deletes item from the cart
-     *
-     * @param Request $request
-     * @param $product_id
-     * @param $option_id
-     * @return mixed
-     */
-    public function delItem(Request $request, $product_id, $option_id)
-    {
-        $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($old_cart);
-        $cart->delete($product_id, $option_id);
-        $request->session()->put('cart', $cart);
-
-        return redirect()->back();
     }
 }

@@ -25,13 +25,13 @@ Route::get('/catalog/{slug}', 'SiteController@category')
 /* cart */
 Route::get('/shopping-cart', 'SiteController@shoppingCart')
     ->name('shopping_cart');
-Route::get('/add-to-cart/{id}/{option_id}/{quantity}', 'ProductController@addToCart')
+Route::get('/add-to-cart/{id}/{option_id}/{quantity}', 'SiteController@addToCart')
     ->name('add_to_cart');
-Route::get('/cart-increase/{product_id}/{option_id}', 'ProductController@incQuan')
+Route::get('/cart-increase/{product_id}/{option_id}', 'SiteController@incQuan')
     ->name('cart_increase');
-Route::get('/cart-decrease/{product_id}/{option_id}', 'ProductController@decQuan')
+Route::get('/cart-decrease/{product_id}/{option_id}', 'SiteController@decQuan')
     ->name('cart_decrease');
-Route::get('/cart-delete/{product_id}/{option_id}', 'ProductController@delItem')
+Route::get('/cart-delete/{product_id}/{option_id}', 'SiteController@delItem')
     ->name('cart_delete');
 /* order */
 Route::post('/order', 'SiteController@createOrder')
