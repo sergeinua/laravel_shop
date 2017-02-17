@@ -17,12 +17,10 @@
                 </thead>
                 <tbody>
                 @foreach ($orders as $order)
-                    <tr class="{{ $order->seen == 0 ? 'unread' : null }}">
+                    <tr class="{{ $order->read == 0 ? 'unread' : null }}" onclick="document.location='{{ route('order_show', ['id' => $order->id]) }}'">
                         <td>{{ $order->id }}</td>
                         <td>{{ $order->created_at }}</td>
-                        <td>
-                            <a class="{{ $order->seen == 0 ? 'unread' : null }}" href="{{ route('order_show', ['id' => $order->id]) }}">{{ \App\Order::getStatusDescr($order->status) }}</a>
-                        </td>
+                        <td>{{ \App\Order::getStatusDescr($order->status) }}</td>
                         <td>{{ $order->cus_tel }}</td>
                         <td>{{ $order->cus_email }}</td>
                     </tr>
@@ -34,6 +32,9 @@
     <style>
         .unread {
             color: red;
+        }
+        tr {
+            cursor: pointer;
         }
     </style>
 @stop

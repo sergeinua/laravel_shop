@@ -55,6 +55,10 @@ class OrderController extends Controller
     public function show($id)
     {
         $model = Order::find($id);
+        if ($model->read == 0) {
+            $model->read = 1;
+            $model->save();
+        }
         $items = json_decode($model->items);
 
         return view('order.show')->with([
