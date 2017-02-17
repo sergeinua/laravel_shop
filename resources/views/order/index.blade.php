@@ -3,7 +3,14 @@
 @section('main-content')
 
     <div class="md-6">
-        <div>фильтр здесь</div>
+        <div class="panel">
+            <div>Фильтровать по статусу</div>
+            <div>
+                {{ Form::open(['method' => 'GET']) }}
+                {{ Form::select('filter', ['' => 'все заказы'] + $status_list, isset($_GET['filter']) ? $_GET['filter'] : null) }}
+                {{ Form::close() }}
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -36,5 +43,17 @@
         tr {
             cursor: pointer;
         }
+        .panel {
+            width: 30%;
+            margin: auto;
+            text-align: center;
+        }
     </style>
+    <script>
+        $(document).ready(function () {
+            $('select').on('change', function () {
+                $('form').trigger('submit');
+            });
+        });
+    </script>
 @stop

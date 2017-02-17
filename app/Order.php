@@ -36,4 +36,21 @@ class Order extends Model
                 break;
         }
     }
+
+    /**
+     * Returns order statuses with description
+     *
+     * @return array
+     */
+    public static function getStatusList()
+    {
+        $result = [
+            self::STATUS_PENDING => self::getStatusDescr(self::STATUS_PENDING),
+            self::STATUS_PROCESSING => self::getStatusDescr(self::STATUS_PROCESSING),
+            self::STATUS_FINISHED => self::getStatusDescr(self::STATUS_FINISHED),
+            self::STATUS_PREORDER => self::getStatusDescr(self::STATUS_PREORDER),
+        ];
+
+        return $result;
+    }
 }

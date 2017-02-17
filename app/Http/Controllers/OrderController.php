@@ -17,12 +17,22 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $orders = Order::orderBy('created_at', 'desc')->get();
+        $filter = $request->get('filter');
+        if (!empty($filter)) {
+            $orders = Order::orderBy('created_at', 'desc')
+                ->where('status', $filter)
+                ->get();
+        } else {
+            $orders = Order::orderBy('created_at', 'desc')->get();
+        }
+        $status_list = Order::getStatusList();
+
 
         return view('order.index')
-            ->with('orders', $orders);
+            ->with('orders', $orders)
+            ->with('status_list', $status_list);
     }
 
     /**
