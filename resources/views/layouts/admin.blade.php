@@ -167,7 +167,7 @@
             <ul class="sidebar-menu">
                 <li class="header">Меню</li>
                 <li class="active">
-                    <a href="#">
+                    <a href="{{ route('order_list') }}">
                         <span>Заказы</span>
                     </a>
                 </li>
@@ -177,8 +177,8 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/product">Список товаров</a></li>
-                        <li><a href="/admin/product/add">Добавить товар</a></li>
+                        <li><a href="{{ route('product_list') }}">Список товаров</a></li>
+                        <li><a href="{{ route('product_add') }}">Добавить товар</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -187,8 +187,8 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/category">Список категорий</a></li>
-                        <li><a href="/admin/category/add">Добавить катагорию</a></li>
+                        <li><a href="{{ route('category_list') }}">Список категорий</a></li>
+                        <li><a href="{{ route('category_add') }}">Добавить категорию</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -197,9 +197,9 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/page">Список страниц</a></li>
-                        <li><a href="/admin/homepage">Домашняя Страница</a></li>
-                        <li><a href="/admin/page/add">Добавить Страницу</a></li>
+                        <li><a href="{{ route('page_list') }}">Список страниц</a></li>
+                        <li><a href="{{ route('page_home') }}">Домашняя Страница</a></li>
+                        <li><a href="{{ route('page_add') }}">Добавить Страницу</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -208,8 +208,8 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/option">Все опции</a></li>
-                        <li><a href="/admin/option/add">Добавить опцию</a></li>
+                        <li><a href="{{ route('option_list') }}">Все опции</a></li>
+                        <li><a href="{{ route('option_add') }}">Добавить опцию</a></li>
                     </ul>
                 </li>
             </ul>

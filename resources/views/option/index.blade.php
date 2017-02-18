@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="md-6">
-        <a class="btn btn-info" href="{{ action("OptionController@create") }}">Добавить опцию</a>
+        <a class="btn btn-info" href="{{ route('option_add') }}">Добавить опцию</a>
     </div>
 
 @stop

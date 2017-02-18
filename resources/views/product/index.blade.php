@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="md-6">
-        <a class="btn btn-info" href="{{ action("ProductController@create") }}">Добавить товар</a>
+        <a class="btn btn-info" href="{{ route('product_add') }}">Добавить товар</a>
     </div>
 
 @stop

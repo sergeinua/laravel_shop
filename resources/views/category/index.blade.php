@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="md-6">
-        <a class="btn btn-info" href="{{ action("CategoryController@create") }}">Добавить пункт</a>
+        <a class="btn btn-info" href="{{ route('category_add') }}">Добавить пункт</a>
     </div>
 
 @stop
