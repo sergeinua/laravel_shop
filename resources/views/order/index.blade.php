@@ -7,7 +7,7 @@
             <div>Фильтровать по статусу</div>
             <div>
                 {{ Form::open(['method' => 'GET']) }}
-                {{ Form::select('filter', ['' => 'все заказы'] + $status_list, isset($_GET['filter']) ? $_GET['filter'] : null) }}
+                    {{ Form::select('filter', ['' => 'все заказы'] + $status_list, isset($_GET['filter']) ? $_GET['filter'] : null) }}
                 {{ Form::close() }}
             </div>
         </div>
@@ -44,9 +44,10 @@
             cursor: pointer;
         }
         .panel {
-            width: 30%;
+            width: 20%;
             margin: auto;
             text-align: center;
+            padding: 15px;
         }
     </style>
     <script>

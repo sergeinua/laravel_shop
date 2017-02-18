@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\ProductOption;
 use Illuminate\Http\Request;
 
@@ -52,6 +53,23 @@ class RequestController extends Controller
     public function deleteOption($item_id)
     {
         ProductOption::destroy($item_id);
+
+        return response()->json(200);
+    }
+
+    /**
+     * Updates order status
+     *
+     * @param $order_id
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateOrderStatus($order_id, Request $request)
+    {
+        $model = Order::find($order_id);
+        $status = $request->input('status');
+        $model->status = $status;
+        $model->save();
 
         return response()->json(200);
     }

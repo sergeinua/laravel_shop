@@ -29,7 +29,6 @@ class OrderController extends Controller
         }
         $status_list = Order::getStatusList();
 
-
         return view('order.index')
             ->with('orders', $orders)
             ->with('status_list', $status_list);
@@ -70,10 +69,13 @@ class OrderController extends Controller
             $model->save();
         }
         $items = json_decode($model->items);
+        $status_list = Order::getStatusList();
 
         return view('order.show')->with([
                 'model' => $model,
-                'items' => $items
+                'items' => $items,
+                'status' => $model->status,
+                'status_list' => $status_list
             ]);
     }
 

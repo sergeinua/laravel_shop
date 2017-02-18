@@ -28,3 +28,7 @@ Route::post('/option', [
 Route::post('/option/delete/{item_id}', [
     'uses' => 'RequestController@deleteOption'
 ]);
+
+Route::post('/order/{order_id}', [
+    'uses' => 'RequestController@updateOrderStatus'
+]);

@@ -41,8 +41,11 @@ Auth::routes();
 
 /* orders */
 Route::get('/admin', 'OrderController@index');
-Route::get('/admin/order', 'OrderController@index');
+Route::get('/admin/order', 'OrderController@index')
+    ->name('order_list');
 Route::get('/admin/order/{id}', 'OrderController@show')
+    ->name('order_show');
+Route::post('/admin/order/{id}', 'OrderController@show')
     ->name('order_show');
 /* category */
 Route::get('/admin/category', 'CategoryController@index')
