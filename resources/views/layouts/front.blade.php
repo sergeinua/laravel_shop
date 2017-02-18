@@ -8,8 +8,6 @@
           content="Купить пряжу в интернет магазине оптом. Доставка по России, самовывоз. Оптовый склад в Москве.Пряжа для вязания - купить пряжу в интернет магазине оптомПряжа для вязания - купить пряжу в интернет магазине оптом">
     <link rel="stylesheet" type="text/css" href="/css/fancybox.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/fancybox.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
     <link rel="stylesheet" href="/css/main1.css" type="text/css">
     <link rel="stylesheet" href="/css/filter.css" type="text/css">
     <link rel="stylesheet" href="/css/grid.css" type="text/css">
@@ -17,17 +15,12 @@
     <link rel="stylesheet" href="/css/prettyPhoto.css" type="text/css">
     <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.css" type="text/css">
-    <script type="text/javascript" src="/js/jquery.slicknav.min.js"></script>
-    <script type="text/javascript" src="/js/prettyphoto.js"></script>
-    <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
-    <script type="text/javascript" src="/js/slider.js"></script>
-    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/js/compare.js"></script>
-    <script type="text/javascript" src="/js/ultimate.js"></script>
-    <script type="text/javascript" src="/js/jquery.tinycarousel.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
-
+    <link type="image/gif" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.7/images/bx_loader.gif" rel="shortcut icon">
+    <link type="image/png" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.7/images/controls.png" rel="shortcut icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.7/jquery.bxslider.css" type="text/css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.7/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.7/vendor/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.7/vendor/jquery.fitvids.js"></script>
     <link type="image/ico" href="/favicon.ico" rel="shortcut icon">
 </head>
 <body>
@@ -50,7 +43,7 @@
                 <div class="callback-wrap"><a href="#" id="callback-link">
                     </a>
                     <div class="callback-wrap"><a href="#" id="callback-link">
-                        </a><a class="callback-close" id="callback-close"><img src="/images/close.png"
+                        </a><a class="callback-close" id="callback-close"><img src="/img/close.png"
                                                                                alt="закрыть"></a>
 
                         <form action="/registraciya/login" method="post">
@@ -168,7 +161,7 @@
     <div class="container">
         @if($show_slider)
         <div class="row mobile-marg">
-            <div class="col-sm-8 ss_block hidden-xs">
+            <div class="col-xs12 ss_block hidden-xs">
                 {{--slider not finished here--}}
                     <div class="bxslider">
                         <li>
@@ -178,16 +171,6 @@
                             <img src="/img/slider/2.jpg">
                         </li>
                     </div>
-
-            </div>
-            <div class="col-sm-4 b_block">
-                <div class="banner-1">
-                    <div class="banner">
-                        <a href="http://www.parswool.ru/katalog/yarnart/christmas" target="_blank">
-                            <img src="http://parswool.ru/images/b/000/000006/237-sdc15694.jpg" alt="" width="320">
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
         @endif
@@ -222,32 +205,35 @@
         </div>
     </div>
 </div>
-<div id="fancybox-tmp"></div>
-<div id="fancybox-loading">
-    <div></div>
-</div>
-<div id="fancybox-overlay"></div>
-<div id="fancybox-wrap">
-    <div id="fancybox-outer">
-        <div class="fancybox-bg" id="fancybox-bg-n"></div>
-        <div class="fancybox-bg" id="fancybox-bg-ne"></div>
-        <div class="fancybox-bg" id="fancybox-bg-e"></div>
-        <div class="fancybox-bg" id="fancybox-bg-se"></div>
-        <div class="fancybox-bg" id="fancybox-bg-s"></div>
-        <div class="fancybox-bg" id="fancybox-bg-sw"></div>
-        <div class="fancybox-bg" id="fancybox-bg-w"></div>
-        <div class="fancybox-bg" id="fancybox-bg-nw"></div>
-        <div id="fancybox-content"></div>
-        <a id="fancybox-close"></a>
-        <div id="fancybox-title"></div>
-        <a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a
-                href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>
-    </div>
-</div>
+{{--<div id="fancybox-tmp"></div>--}}
+{{--<div id="fancybox-loading">--}}
+    {{--<div></div>--}}
+{{--</div>--}}
+{{--<div id="fancybox-overlay"></div>--}}
+{{--<div id="fancybox-wrap">--}}
+    {{--<div id="fancybox-outer">--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-n"></div>--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-ne"></div>--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-e"></div>--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-se"></div>--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-s"></div>--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-sw"></div>--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-w"></div>--}}
+        {{--<div class="fancybox-bg" id="fancybox-bg-nw"></div>--}}
+        {{--<div id="fancybox-content"></div>--}}
+        {{--<a id="fancybox-close"></a>--}}
+        {{--<div id="fancybox-title"></div>--}}
+        {{--<a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a--}}
+                {{--href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>--}}
+    {{--</div>--}}
+{{--</div>--}}
 @if($show_slider)
 <script>
     $(document).ready(function(){
-        $('.bxslider').bxSlider({auto:true});
+        var slider = $('.bxslider').bxSlider({auto:true});
+        $(window).resize(function () {
+            slider.reloadSlider();
+        })
     });
 </script>
 @endif
