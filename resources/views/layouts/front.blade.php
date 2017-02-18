@@ -74,21 +74,6 @@
 
             <a style="float:right;" href="/registraciya">Регистрация</a></div>
     </div>
-    <div class="mobileNav">
-        <div class="slicknav_menu"><a href="#" aria-haspopup="true" tabindex="0" class="slicknav_btn slicknav_collapsed"
-                                      style="outline: medium none;"><span class="slicknav_menutxt"></span><span
-                        class="slicknav_icon slicknav_no-text"><span class="slicknav_icon-bar"></span><span
-                            class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a>
-            <ul class="slicknav_nav slicknav_hidden" aria-hidden="true" style="display: none;" role="menu">
-                <li><a class="act" role="menuitem" tabindex="-1">ГЛАВНАЯ</a></li>
-                <li><a href="/galereya" role="menuitem" tabindex="-1">ГАЛЕРЕЯ</a></li>
-                <li><a href="/opt" role="menuitem" tabindex="-1">ОПТ</a></li>
-                <li><a href="/dostavka" role="menuitem" tabindex="-1">ДОСТАВКА</a></li>
-                <li><a href="/oplata" role="menuitem" tabindex="-1">ОПЛАТА</a></li>
-                <li><a href="/contacts" role="menuitem" tabindex="-1">КОНТАКТЫ </a></li>
-            </ul>
-        </div>
-    </div>
 </div>
 <div class="container">
     <div class="header-middle clearfix">
