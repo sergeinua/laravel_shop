@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Добавить товар</div>
+                    <div class="panel-heading"><h1>Карточка товара</h1></div>
                     <div class="panel-body">
                         @if (Session::has('error'))
                             <div class="alert alert-danger">{{ Session::get('error') }}</div>
@@ -39,12 +39,22 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="pull-right">
+                            {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}
+                        </div>
+                        {{ Form::close() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>Опции товара</h2>
+                    </div>
+                    <div class="panel-body">
                         @if(isset($model))
-                            <div>
-                                <hr>
-                                <div class="text-center">Опции товара</div>
-                                <hr>
-                            </div>
                             <div>
                                 <div class="row">
                                     <div class="col-xs-9">
@@ -52,10 +62,14 @@
                                             @if($product_options)
                                                 <span>Доступные цвета:</span>
                                                 @foreach($product_options as $key => $value)
-                                                    <li style="margin-top: 10px">
-                                                        <a class="btn btn-danger" onclick="deleteOption({{ $key }})">удалить</a>
-                                                        {{ $value['description'] }}
-                                                        <img style="height: 34px;" src="/img/catalog/{{ $value['img'] }}">
+                                                    <li>
+                                                        <div class="row">
+                                                            <a class="col-xs-1" onclick="deleteOption({{ $key }})"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                            <span class="col-xs-2">{{ $value['description'] }}</span>
+                                                            <img class="col-xs-1" src="/img/catalog/{{ $value['img'] }}">
+                                                            <input class="col-xs-2 opt-quan" type="text">
+                                                            <a class="col-xs-1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                                        </div>
                                                     </li>
                                                 @endforeach
                                             @else
@@ -71,17 +85,13 @@
                                             {{ Form::select('option_id', $color_options, null,['class' => 'form-control', 'id' => 'option_id']) }}
                                         </div>
                                         <div class="col-xs-3">
-                                            <button id="btn">Добавить опцию</button>
+                                            <button class="btn btn-primary" id="btn">Добавить опцию</button>
                                         </div>
                                         <div class="col-xs-3"></div>
                                     </div>
                                 </div>
                             </div>
                         @endif
-                        <div class="pull-right">
-                            {{ Form::button('Сохранить', ['id' => 'sub_form', 'type' => 'submit', 'class' => 'btn btn-lg btn-success']) }}
-                        </div>
-                        {{ Form::close() }}
                     </div>
                 </div>
             </div>
@@ -119,5 +129,19 @@
             });
         }
     </script>
+    <style>
+        ul li {
+            margin-top: 10px;
+            list-style-type: none;
+        }
+        .col-xs-2.opt-quan {
+            width: 30px;
+            height: 20px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding: 3px;
+        }
+    </style>
 
 @stop
