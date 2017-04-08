@@ -67,8 +67,8 @@
                                                             <a class="col-xs-1" onclick="deleteOption({{ $key }})"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                                             <span class="col-xs-2">{{ $value['description'] }}</span>
                                                             <img class="col-xs-1" src="/img/catalog/{{ $value['img'] }}">
-                                                            <input class="col-xs-2 opt-quan" type="text">
-                                                            <a class="col-xs-1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                                            <input class="col-xs-2 opt-quan" type="text" id="stock-{{ $key }}">
+                                                            <a onclick="updateStock({{ $key }})" class="col-xs-1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                                         </div>
                                                     </li>
                                                 @endforeach
@@ -127,6 +127,19 @@
             }).done(function () {
                 window.location.reload();
             });
+        }
+        function updateStock(product_option_id) {
+            var stock = parseInt($('#stock-' + product_option_id).val()),
+                data = {
+                    product_option_id: product_option_id,
+                    stock: stock
+                };
+            $.post('/api/stock', data, function (err) {
+                console.log('err', err);
+            }).done(function (res) {
+                console.log('sent', res);
+            });
+            return false;
         }
     </script>
     <style>

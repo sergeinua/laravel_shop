@@ -2,8 +2,10 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\ProductBalance;
 use App\ProductOption;
 use Illuminate\Http\Request;
+use Psy\Util\Json;
 
 class RequestController extends Controller
 {
@@ -69,6 +71,27 @@ class RequestController extends Controller
         $model = Order::find($order_id);
         $status = $request->input('status');
         $model->status = $status;
+        $model->save();
+
+        return response()->json(200);
+    }
+
+    /**
+     * Updates stock quantity for the defined item
+     *
+     * @param $product_id
+     * @param $option_id
+     * @param $stock
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateStock(Request $request)
+    {
+        $product_option_id = $request->input('product_option_id');
+        $stock = $request->input('stock');
+        $model = ProductBalance::where('product_option_id', $product_option_id)
+            ->first();
+        $model->stock = $stock;
         $model->save();
 
         return response()->json(200);
