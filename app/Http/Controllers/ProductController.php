@@ -44,7 +44,7 @@ class ProductController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'price' => 'required',
-                'slug' => 'required|unique'
+                'slug' => 'required'
             ]);
             if ($validator->fails()) {
                 Session::flash('error', 'Ошибка валидации');
