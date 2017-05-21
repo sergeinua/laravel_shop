@@ -44,7 +44,7 @@ class ProductController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'price' => 'required',
-                'slug' => 'required'
+                'slug' => 'required|unique:product'
             ]);
             if ($validator->fails()) {
                 Session::flash('error', 'Ошибка валидации');
@@ -72,7 +72,7 @@ class ProductController extends Controller
                 }
                 Session::flash('success', 'Товар сохранен');
 
-                return redirect(route('product_list'));
+                return redirect(route('product_update', ['id' => $model->id]));
             }
         }
 
