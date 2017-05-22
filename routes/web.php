@@ -73,6 +73,8 @@ Route::any('/admin/product/add', 'ProductController@create')
     ->name('product_add');
 Route::any('/admin/product/edit/{id}', 'ProductController@update')
     ->name('product_update');
+Route::get('/admin/product/delete/{id}', 'ProductController@delete')
+    ->name('product_delete');
 /* options */
 Route::get('/admin/option', 'OptionController@index')
     ->name('option_list');
