@@ -6,6 +6,7 @@ use App\ProductBalance;
 use App\ProductOption;
 use Illuminate\Http\Request;
 use Psy\Util\Json;
+use App\Option;
 
 class RequestController extends Controller
 {
@@ -21,7 +22,7 @@ class RequestController extends Controller
             'product_id' => $request->input('product_id'),
             'option_id' => $request->input('option_id')
         ])->exists();
-        if($exists) {
+        if ($exists) {
             return response()->json(true, 201);
         }
         $model = new ProductOption();
@@ -95,5 +96,20 @@ class RequestController extends Controller
         $model->save();
 
         return response()->json(200);
+    }
+
+    /**
+     * Returns stock quantity for the defined product with option
+     *
+     * @param $product_option_id
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getStock($product_option_id, Request $request)
+    {
+        $model = ProductBalance::where('product_option_id', $product_option_id)
+            ->first();
+
+        return response()->json($model->stock);
     }
 }

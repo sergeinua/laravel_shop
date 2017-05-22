@@ -30,6 +30,11 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="container">
+                                <h3>Основное изображение</h3>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-6 col-xs-12">
                                 {{ Form::file('img') }}
                             </div>
@@ -61,13 +66,22 @@
                                         <ul class="actual-colors">
                                             @if($product_options)
                                                 <span>Доступные цвета:</span>
+                                                <li>
+                                                    <div class="row">
+                                                        <div class="col-xs-1">action</div>
+                                                        <div class="col-xs-2">code</div>
+                                                        <div class="col-xs-2">img</div>
+                                                        <div class="col-xs-1">stock</div>
+                                                        <div class="col-xs-1">update</div>
+                                                    </div>
+                                                </li>
                                                 @foreach($product_options as $key => $value)
                                                     <li>
                                                         <div class="row">
                                                             <a class="col-xs-1" onclick="deleteOption({{ $key }})"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                                             <span class="col-xs-2">{{ $value['description'] }}</span>
-                                                            <img class="col-xs-1" src="/img/catalog/{{ $value['img'] }}">
-                                                            <input class="col-xs-2 opt-quan" type="text" id="stock-{{ $key }}">
+                                                            <img class="col-xs-3" src="/img/catalog/{{ $value['img'] }}">
+                                                            <input class="col-xs-2 opt-quan" type="text" id="stock-{{ $key }}" data-product-option-id="{{ $key }}">
                                                             <a onclick="updateStock({{ $key }})" class="col-xs-1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                                         </div>
                                                     </li>
@@ -81,14 +95,27 @@
                                 </div>
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-xs-3">
-                                            {{ Form::select('option_id', $color_options, null,['class' => 'form-control', 'id' => 'option_id']) }}
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <button class="btn btn-primary" id="btn">Добавить опцию</button>
-                                        </div>
-                                        <div class="col-xs-3"></div>
+                                        {{ Form::open(['url' => route('option_add'), 'method' => 'POST', 'id' => 'optionForm', 'class' => 'clearfix', 'enctype' => 'multipart/form-data']) }}
+                                            {{ Form::text('product_id', $model->id, ['class' => 'hidden']) }}
+                                            <div class="row">
+                                                <div class="form-group input-group-lg col-lg-3">
+                                                    {{ Form::text('code', null, ['placeholder' => 'код', 'class' => 'form-control']) }}
+                                                </div>
+                                                <div class="form-group input-group-lg col-lg-3">
+                                                    {{ Form::text('description', null, ['placeholder' => 'описание', 'class' => 'form-control']) }}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-lg-3 col-xs-12">
+                                                    {{ Form::file('img') }}
+                                                </div>
+                                                <div class="form-group col-lg-3 col-xs-12">
+                                                    {{ Form::button('Сохранить', ['id' => 'btn', 'type' => 'submit', 'class' => 'btn btn-primary']) }}
+                                                </div>
+                                            </div>
+                                        {{ Form::close() }}
                                     </div>
+
                                 </div>
                             </div>
                         @endif
@@ -102,23 +129,13 @@
             $('textarea').summernote({
                 height: 300
             });
-            @if(isset($model))
-                $('button#btn').click(function (event) {
-                    event.preventDefault();
-                    var option_id = $('#option_id').val(),
-                        product_id = "{{$model->id}}";
-                    var data = {
-                        option_id: option_id,
-                        product_id: product_id
-                    };
-                    $.post('/api/option', data, function (error) {
-                        console.log(error)
-                    }).done(function(response) {
-                        window.location.reload();
-                    });
-                    return false;
+            //setting stock quantity
+            $('.opt-quan').each(function () {
+                var self = $(this);
+                $.get('/api/stock/' + $(this).data('productOptionId'), function (resp) {
+                    self.val(resp);
                 });
-            @endif
+            })
         });
         function deleteOption(item_id) {
             var url = '/api/option/delete/' + item_id;

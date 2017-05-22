@@ -27,6 +27,10 @@ Route::post('/order/{order_id}', [
     'uses' => 'RequestController@updateOrderStatus'
 ]);
 // product quantity
+Route::get('/stock/{opt}', [
+    'uses' => 'RequestController@getStock',
+    'name' => 'api_get_stock'
+]);
 Route::post('/stock', [
     'uses' => 'RequestController@updateStock',
     'name' => 'api_update_stock'

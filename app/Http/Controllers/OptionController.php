@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Option;
+use App\ProductBalance;
+use App\ProductOption;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
@@ -57,10 +59,20 @@ class OptionController extends Controller
                     $model->img = $image;
                 }
                 $model->save();
+                //product to option
+                $po = new ProductOption();
+                $po->product_id = $request->input('product_id');
+                $po->option_id = $model->id;
+                $po->save();
+                //balance
+                $pb = new ProductBalance();
+                $pb->product_option_id = $po->id;
+                $pb->stock = 0;
+                $pb->save();
 
                 Session::flash('success', 'Опция сохранена');
 
-                return redirect(route('option_list'));
+                return back();
             }
         }
 
