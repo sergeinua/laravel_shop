@@ -40,7 +40,7 @@ class OptionController extends Controller
     {
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
-                'code' => 'required|unique:option',
+                'code' => 'required',
                 'description' => 'required'
             ]);
             if ($validator->fails()) {
