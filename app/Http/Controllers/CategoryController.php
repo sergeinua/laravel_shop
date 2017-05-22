@@ -114,4 +114,14 @@ class CategoryController extends Controller
                 'form_action' => $form_action
             ]);
     }
+
+    /**
+     * Deletes category by id
+     *
+     * @param $id
+     */
+    public function delete($id)
+    {
+        Category::destroy($id);
+    }
 }

@@ -51,6 +51,10 @@
 
                         {{ Form::close() }}
 
+                        @if(isset($model))
+                            <a href="{{ route('category_delete', ['id' => $model->id]) }}" class="btn btn-lg btn-danger pull-right">удалить товар</a>
+                        @endif
+
                     </div>
                 </div>
             </div>

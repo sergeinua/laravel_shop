@@ -55,6 +55,8 @@ Route::post('/admin/category/add', 'CategoryController@create')
     ->name('category_add');
 Route::any('/admin/category/edit/{id}', 'CategoryController@update')
     ->name('category_edit');
+Route::get('/admin/category/delete/{id}', 'CategoryController@delete')
+    ->name('category_delete');
 /* page */
 Route::get('/admin/page', 'PageController@index')
     ->name('page_list');
