@@ -55,6 +55,9 @@ class RequestController extends Controller
      */
     public function deleteOption($item_id)
     {
+        $option_id = ProductOption::findOrFail($item_id)->option_id;
+        Option::destroy($option_id);
+        ProductBalance::where('product_option_id', $item_id)->delete();
         ProductOption::destroy($item_id);
 
         return response()->json(200);

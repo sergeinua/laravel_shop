@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Option;
 use App\Product;
+use App\ProductBalance;
 use App\ProductCategory;
 use App\ProductOption;
 use Illuminate\Http\Request;
@@ -162,7 +163,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Deletes product
+     * Deletes product with all existing options
      *
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -170,7 +171,15 @@ class ProductController extends Controller
     public function delete($id)
     {
         Product::destroy($id);
-        ProductOption::where('product_id', $id)->delete();
+        $product_option_id = ProductOption::where('product_id', $id)->get();
+        if (count($product_option_id) > 0) {
+            foreach ($product_option_id as $item) {
+                ProductBalance::where('product_option_id', $item->id)->delete();
+                ProductOption::where('option_id', $item->option_id)->delete();
+                Option::where('id', $item->option_id)->delete();
+            }
+        }
+        ProductCategory::where('product_id', $id)->delete();
         Session::flash('success', 'Товар удален');
 
         return redirect(route('product_list'));

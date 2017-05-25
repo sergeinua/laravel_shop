@@ -110,7 +110,7 @@
                                                     {{ Form::file('img') }}
                                                 </div>
                                                 <div class="form-group col-lg-3 col-xs-12">
-                                                    {{ Form::button('Сохранить', ['id' => 'btn', 'type' => 'submit', 'class' => 'btn btn-primary']) }}
+                                                    {{ Form::button('Добавить опцию', ['id' => 'btn', 'type' => 'submit', 'class' => 'btn btn-primary']) }}
                                                 </div>
                                             </div>
                                         {{ Form::close() }}
