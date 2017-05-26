@@ -66,23 +66,17 @@
                                         <ul class="actual-colors">
                                             @if($product_options)
                                                 <span>Доступные цвета:</span>
-                                                <li>
-                                                    <div class="row">
-                                                        <div class="col-xs-1">action</div>
-                                                        <div class="col-xs-2">code</div>
-                                                        <div class="col-xs-2">img</div>
-                                                        <div class="col-xs-1">stock</div>
-                                                        <div class="col-xs-1">update</div>
-                                                    </div>
-                                                </li>
                                                 @foreach($product_options as $key => $value)
                                                     <li>
                                                         <div class="row">
+                                                            <a class="col-xs-1" href="{{ route('option_update', ['id' => $key]) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                                             <a class="col-xs-1" onclick="deleteOption({{ $key }})"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                                             <span class="col-xs-2">{{ $value['description'] }}</span>
                                                             <img class="col-xs-3" src="/img/catalog/{{ $value['img'] }}">
                                                             <input class="col-xs-2 opt-quan" type="text" id="stock-{{ $key }}" data-product-option-id="{{ $key }}">
                                                             <a onclick="updateStock({{ $key }})" class="col-xs-1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                                            <div class="alert alert-danger col-xs-2 hidden" id="stock-error-{{ $key }}">Ошибка</div>
+                                                            <div class="alert alert-success col-xs-2 hidden" id="stock-success-{{ $key }}">Ок</div>
                                                         </div>
                                                     </li>
                                                 @endforeach
@@ -122,8 +116,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="row">
             <div class="col-md-9">
                 <div class="panel panel-default">
@@ -166,8 +158,11 @@
                     product_option_id: product_option_id,
                     stock: stock
                 };
-            $.post('/api/stock', data, function (err) {
-                console.log('err', err);
+            $.post('/api/stock', data, function (res) {
+                $('#stock-success-' + product_option_id).toggleClass('hidden');
+                setTimeout(function () {
+                    $('#stock-success-' + product_option_id).toggleClass('hidden');
+                }, 3000);
             }).done(function (res) {
                 console.log('sent', res);
             });

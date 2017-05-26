@@ -113,8 +113,9 @@ class OptionController extends Controller
                 }
                 $model->save();
                 Session::flash('success', 'Опция сохранена');
+                $product_id = $request->session()->pull('product_id');
 
-                return redirect(route('option_list'));
+                return redirect(route('product_update', ['id' => $product_id]));
             }
         }
 

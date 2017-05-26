@@ -99,6 +99,9 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $model = Product::find($id);
+        //that's for the redirect after option update
+        $request->session()->put('product_id', $id);
+
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
@@ -172,6 +175,7 @@ class ProductController extends Controller
     {
         Product::destroy($id);
         $product_option_id = ProductOption::where('product_id', $id)->get();
+
         if (count($product_option_id) > 0) {
             foreach ($product_option_id as $item) {
                 ProductBalance::where('product_option_id', $item->id)->delete();
@@ -179,6 +183,7 @@ class ProductController extends Controller
                 Option::where('id', $item->option_id)->delete();
             }
         }
+
         ProductCategory::where('product_id', $id)->delete();
         Session::flash('success', 'Товар удален');
 
