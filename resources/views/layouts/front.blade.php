@@ -30,49 +30,11 @@
         @include('site.menu-top')
 
         <div id="search">
-            <form action="/poisk-po-katalogu" method="get">
+            <form action="/search" method="get">
                 <input value="" name="query" style="display: inline-block;" type="text">
                 <input name="" value="Поиск" class="button" style="display: inline-block;" type="submit">
             </form>
         </div>
-        <div class="reg">
-            <a href="#" id="callback-link">Войти
-            </a>
-            <div style="display:none;" id="contact-popup" class="popupPhone"><a href="#" id="callback-link">
-                </a>
-                <div class="callback-wrap"><a href="#" id="callback-link">
-                    </a>
-                    <div class="callback-wrap"><a href="#" id="callback-link">
-                        </a><a class="callback-close" id="callback-close"><img src="/img/close.png"
-                                                                               alt="закрыть"></a>
-
-                        <form action="/registraciya/login" method="post">
-                            <table border="0">
-                                <tbody>
-                                <tr>
-
-                                    <td><input id="auth-user" class="pl" name="data[User][username]" placeholder="Логин"
-                                               type="text"></td>
-                                </tr>
-                                <tr>
-
-                                    <td><input id="auth-pass" class="pl" name="data[User][password]"
-                                               placeholder="Пароль" type="password"></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <br><a href="/registraciya/password" style="color:#626262; font-size:10px;">Забыли
-                                            пароль</a></td>
-                                    <td><input value="Войти" style="float:right;" type="submit"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <a style="float:right;" href="/registraciya">Регистрация</a></div>
     </div>
 </div>
 <div class="container">

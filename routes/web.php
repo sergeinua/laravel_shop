@@ -20,8 +20,8 @@ Route::get('/catalog/{category}/{slug}', 'SiteController@product')
 Route::get('/catalog/{slug}', 'SiteController@category')
     ->name('site_category');
 /* page */
-//Route::get('/{slug}', 'SiteController@page')
-//    ->name('site_page');
+Route::get('/page/{slug}', 'SiteController@page')
+    ->name('site_page');
 /* cart */
 Route::get('/shopping-cart', 'SiteController@shoppingCart')
     ->name('shopping_cart');
@@ -36,6 +36,9 @@ Route::get('/cart-delete/{product_id}/{option_id}', 'SiteController@delItem')
 /* order */
 Route::post('/order', 'SiteController@createOrder')
     ->name('order_post');
+/* search */
+Route::get('/search', 'SiteController@search')
+    ->name('search');
 
 Auth::routes();
 

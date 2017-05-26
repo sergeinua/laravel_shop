@@ -56,9 +56,18 @@ class SiteController extends Controller
             ]);
     }
 
+    /**
+     * Displays static pages
+     *
+     * @param $slug
+     * @return $this
+     */
     public function page($slug)
     {
-        return view('');
+        $model = Page::where('slug', $slug)->first();
+
+        return view('site.page')
+            ->with('model', $model);
     }
 
     /**
@@ -226,5 +235,15 @@ class SiteController extends Controller
         $request->session()->put('cart', $cart);
 
         return redirect()->back();
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $model = Product::where('description', 'LIKE', '%' . $query . '%')->get();
+
+        dd($model);
+
+        return view('site.search')->with('model', $model);
     }
 }

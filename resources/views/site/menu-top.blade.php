@@ -1,10 +1,7 @@
 <ul id="top-menu">
-    <li><a class="act">Главная</a></li>
-
     @foreach($pages as $page)
 
-        <li><a href="/{{ $page->slug }}">{{ $page->name }}</a></li>
+        <li><a href="/page/{{ $page->slug }}">{{ $page->name }}</a></li>
 
     @endforeach
-
 </ul>
